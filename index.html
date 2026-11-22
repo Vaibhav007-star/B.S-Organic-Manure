@@ -1,0 +1,1438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>B.S. Organic Manure — Pure Soil. Better Crops.</title>
+  <meta name="mobile-web-app-capable" content="yes"/>
+  <meta name="apple-mobile-web-app-capable" content="yes"/>
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+  <meta name="apple-mobile-web-app-title" content="BS Organic"/>
+  <meta name="theme-color" content="#2a5c0e"/>
+  <meta name="description" content="B.S. Organic Manure — 100% natural, chemical-free manure for healthier crops and richer soil."/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <style>
+    *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+    :root{--green:#2a5c0e;--lime:#6db33f;--gold:#c8860a;--cream:#f6f1e7;--tan:#e2d5bc;--white:#fdfaf3;--text:#1a1710;--muted:#756a55;--dark:#0f1a08;}
+    html{scroll-behavior:smooth;}
+    body{font-family:'Jost',sans-serif;background:var(--white);color:var(--text);overflow-x:hidden;}
+
+    /* LOADER */
+    #loader{position:fixed;inset:0;background:var(--dark);z-index:9999;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:1rem;transition:opacity 0.5s;}
+    #loader.hide{opacity:0;pointer-events:none;}
+    .loader-logo{font-family:'Playfair Display',serif;font-size:2.5rem;color:var(--cream);}
+    .loader-logo span{color:var(--lime);font-style:italic;}
+    .loader-bar{width:200px;height:3px;background:rgba(255,255,255,0.1);border-radius:2px;overflow:hidden;}
+    .loader-fill{height:100%;width:0;background:var(--lime);animation:load 1.5s ease forwards;}
+    @keyframes load{to{width:100%;}}
+
+    /* WHATSAPP */
+    .wa-float{position:fixed;bottom:2rem;right:2rem;z-index:900;background:#25d366;color:white;width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.6rem;box-shadow:0 6px 24px #25d36650;text-decoration:none;transition:transform 0.2s;}
+    .wa-float:hover{transform:scale(1.1);}
+    #backTop{position:fixed;bottom:5.5rem;right:2rem;z-index:900;background:var(--green);color:white;width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1rem;cursor:pointer;opacity:0;transition:opacity 0.3s;border:none;}
+    #backTop.show{opacity:1;}
+
+    /* NAVBAR */
+    nav{position:fixed;top:0;left:0;right:0;z-index:1000;display:flex;align-items:center;justify-content:space-between;padding:1rem 4rem;background:rgba(253,250,243,0.93);backdrop-filter:blur(14px);border-bottom:1px solid var(--tan);transition:box-shadow 0.3s;}
+    .logo{font-family:'Playfair Display',serif;font-size:1.4rem;font-weight:700;color:var(--green);cursor:pointer;}
+    .logo span{color:var(--lime);font-style:italic;}
+    .nav-links{display:flex;gap:1.8rem;list-style:none;align-items:center;}
+    .nav-links a{text-decoration:none;font-size:0.78rem;font-weight:500;letter-spacing:1.2px;text-transform:uppercase;color:var(--text);transition:color 0.2s;}
+    .nav-links a:hover{color:var(--lime);}
+    .cart-btn{position:relative;background:var(--cream);border:1px solid var(--tan);padding:0.45rem 0.9rem;border-radius:2rem;font-size:0.78rem;font-weight:500;cursor:pointer;font-family:'Jost',sans-serif;color:var(--text);}
+    .cart-count{position:absolute;top:-6px;right:-6px;background:var(--lime);color:white;width:18px;height:18px;border-radius:50%;font-size:0.6rem;font-weight:700;display:flex;align-items:center;justify-content:center;}
+    .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;}
+    .hamburger span{width:24px;height:2px;background:var(--text);border-radius:2px;}
+    .mobile-menu{display:none;position:fixed;top:65px;left:0;right:0;background:var(--white);border-bottom:1px solid var(--tan);padding:1.5rem 2rem;flex-direction:column;gap:1rem;z-index:999;}
+    .mobile-menu.open{display:flex;}
+    .mobile-menu a{text-decoration:none;font-size:1rem;color:var(--text);padding:0.5rem 0;border-bottom:1px solid var(--tan);}
+
+    /* MARQUEE */
+    .marquee-wrap{background:var(--green);padding:0.65rem 0;overflow:hidden;margin-top:65px;}
+    .marquee{display:flex;gap:2.5rem;animation:marquee 22s linear infinite;white-space:nowrap;}
+    .marquee span{font-size:0.72rem;font-weight:500;letter-spacing:2px;text-transform:uppercase;color:var(--cream);flex-shrink:0;}
+    .marquee .dot{color:var(--lime);}
+    @keyframes marquee{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+
+    /* HERO */
+    .hero{min-height:100vh;display:grid;grid-template-columns:1fr 1fr;align-items:center;padding:5rem 4rem 4rem;background:linear-gradient(135deg,var(--white) 50%,#deeece 100%);overflow:hidden;position:relative;}
+    .hero::before{content:'';position:absolute;top:-150px;right:-150px;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,#b4d98820,transparent 70%);}
+    .hero-badge{display:inline-flex;align-items:center;gap:0.5rem;background:var(--lime);color:white;font-size:0.68rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:0.38rem 1rem;border-radius:2rem;margin-bottom:1.4rem;animation:fadeUp 0.8s ease both;}
+    .hero h1{font-family:'Playfair Display',serif;font-size:clamp(2.4rem,4vw,3.8rem);line-height:1.1;color:var(--green);margin-bottom:1.1rem;animation:fadeUp 0.9s 0.1s ease both;}
+    .hero h1 em{color:var(--lime);font-style:italic;}
+    .hero-sub{font-size:0.95rem;color:var(--muted);line-height:1.8;max-width:440px;margin-bottom:2rem;animation:fadeUp 1s 0.2s ease both;}
+    .hero-btns{display:flex;gap:0.8rem;flex-wrap:wrap;margin-bottom:2rem;animation:fadeUp 1s 0.3s ease both;}
+    .btn-primary{background:var(--green);color:white;padding:0.8rem 1.7rem;border-radius:3rem;text-decoration:none;font-weight:600;font-size:0.85rem;border:2px solid var(--green);transition:all 0.25s;display:inline-block;}
+    .btn-primary:hover{background:transparent;color:var(--green);}
+    .btn-outline{border:2px solid var(--green);color:var(--green);padding:0.8rem 1.7rem;border-radius:3rem;text-decoration:none;font-weight:600;font-size:0.85rem;transition:all 0.25s;display:inline-block;}
+    .btn-outline:hover{background:var(--green);color:white;}
+    .btn-gold{background:var(--gold);color:white;padding:0.8rem 1.7rem;border-radius:3rem;text-decoration:none;font-weight:600;font-size:0.85rem;border:2px solid var(--gold);transition:all 0.25s;display:inline-block;}
+    .btn-gold:hover{background:transparent;color:var(--gold);}
+    .hero-trust{display:flex;gap:1.2rem;flex-wrap:wrap;animation:fadeUp 1s 0.4s ease both;}
+    .trust-item{display:flex;align-items:center;gap:0.4rem;font-size:0.78rem;color:var(--muted);}
+    .hero-visual{display:flex;justify-content:center;align-items:center;position:relative;}
+    .hero-circle{width:380px;height:380px;border-radius:50%;background:conic-gradient(from 0deg,#4a8c1a,#2a5c0e,#6db33f,#2a5c0e,#4a8c1a);display:flex;align-items:center;justify-content:center;box-shadow:0 30px 80px #2a5c0e30;animation:spin-slow 20s linear infinite;}
+    @keyframes spin-slow{to{transform:rotate(360deg);}}
+    .hero-circle-inner{width:300px;height:300px;border-radius:50%;background:var(--white);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:2rem;animation:spin-slow 20s linear infinite reverse;}
+    .hero-icon{font-size:4rem;margin-bottom:0.5rem;}
+    .hero-circle-inner h3{font-family:'Playfair Display',serif;font-size:1.1rem;color:var(--green);}
+    .hero-circle-inner p{font-size:0.72rem;color:var(--muted);}
+    .float-tag{position:absolute;background:white;border:1px solid var(--tan);border-radius:2rem;padding:0.4rem 0.85rem;font-size:0.72rem;font-weight:500;color:var(--green);box-shadow:0 4px 20px #0002;white-space:nowrap;}
+    .float-tag:nth-child(2){top:20px;right:-10px;animation:float 3s ease-in-out infinite;}
+    .float-tag:nth-child(3){bottom:50px;left:-20px;animation:float 3s 1s ease-in-out infinite;}
+    .float-tag:nth-child(4){top:110px;left:-25px;animation:float 3s 2s ease-in-out infinite;}
+    @keyframes float{0%,100%{transform:translateY(0);}50%{transform:translateY(-10px);}}
+    @keyframes fadeUp{from{opacity:0;transform:translateY(28px);}to{opacity:1;transform:translateY(0);}}
+
+    /* COMMONS */
+    section{padding:5.5rem 4rem;}
+    .section-label{font-size:0.65rem;letter-spacing:3px;text-transform:uppercase;color:var(--lime);font-weight:700;margin-bottom:0.7rem;}
+    .section-title{font-family:'Playfair Display',serif;font-size:clamp(1.7rem,2.8vw,2.6rem);color:var(--green);line-height:1.2;margin-bottom:0.8rem;}
+    .section-sub{color:var(--muted);font-size:0.9rem;line-height:1.8;max-width:510px;margin:0 auto;}
+    .section-header{text-align:center;margin-bottom:3rem;}
+    .reveal{opacity:0;transform:translateY(36px);transition:opacity 0.7s,transform 0.7s;}
+    .reveal.visible{opacity:1;transform:translateY(0);}
+
+    /* STATS BAR */
+    .stats-bar{background:var(--dark);padding:3rem 4rem;display:grid;grid-template-columns:repeat(4,1fr);gap:2rem;}
+    .stat-item{text-align:center;}
+    .stat-num{font-family:'Playfair Display',serif;font-size:2.4rem;color:var(--lime);font-weight:700;}
+    .stat-label{font-size:0.75rem;color:#6a8a58;letter-spacing:1px;margin-top:0.3rem;}
+
+    /* ABOUT */
+    .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;}
+    .about-cards{display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
+    .acard{border-radius:1.2rem;padding:1.6rem;text-align:center;border:1px solid var(--tan);}
+    .acard.dark{background:var(--green);border-color:var(--green);}
+    .acard.light{background:white;}
+    .acard-icon{font-size:2rem;margin-bottom:0.6rem;}
+    .acard-title{font-family:'Playfair Display',serif;font-size:0.95rem;margin-bottom:0.3rem;}
+    .acard.dark .acard-title{color:var(--cream);}
+    .acard.light .acard-title{color:var(--green);}
+    .acard-text{font-size:0.75rem;line-height:1.6;}
+    .acard.dark .acard-text{color:#a0bf80;}
+    .acard.light .acard-text{color:var(--muted);}
+
+    /* PRODUCTS */
+    .products{background:var(--cream);}
+    .product-tabs{display:flex;gap:0.7rem;justify-content:center;margin-bottom:2.5rem;flex-wrap:wrap;}
+    .tab-btn{background:white;border:1px solid var(--tan);color:var(--muted);padding:0.45rem 1.1rem;border-radius:2rem;font-size:0.78rem;font-weight:500;cursor:pointer;font-family:'Jost',sans-serif;transition:all 0.2s;}
+    .tab-btn.active{background:var(--green);color:white;border-color:var(--green);}
+    .product-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(255px,1fr));gap:1.6rem;}
+    .product-card{background:white;border-radius:1.4rem;overflow:hidden;border:1px solid var(--tan);transition:transform 0.3s,box-shadow 0.3s;}
+    .product-card:hover{transform:translateY(-6px);box-shadow:0 18px 50px #2a5c0e15;}
+    .product-img{height:185px;display:flex;align-items:center;justify-content:center;font-size:4.2rem;background:linear-gradient(135deg,#e0f0c8,#b8d898);position:relative;}
+    .product-badge{position:absolute;top:0.9rem;right:0.9rem;background:var(--lime);color:white;font-size:0.6rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:0.25rem 0.6rem;border-radius:1rem;}
+    .product-badge.hot{background:var(--gold);}
+    .product-info{padding:1.3rem;}
+    .product-info h3{font-family:'Playfair Display',serif;font-size:1.05rem;color:var(--green);margin-bottom:0.3rem;}
+    .product-info p{font-size:0.78rem;color:var(--muted);line-height:1.6;margin-bottom:0.7rem;}
+    .product-meta{display:flex;gap:0.4rem;flex-wrap:wrap;margin-bottom:0.9rem;}
+    .meta-tag{font-size:0.65rem;background:var(--cream);color:var(--green);padding:0.18rem 0.55rem;border-radius:1rem;font-weight:500;}
+    .product-footer{display:flex;align-items:center;justify-content:space-between;}
+    .price{font-family:'Playfair Display',serif;font-size:1.2rem;color:var(--green);font-weight:700;}
+    .price small{font-size:0.68rem;color:var(--muted);font-family:'Jost',sans-serif;font-weight:400;}
+    .add-btn{background:var(--green);color:white;border:none;border-radius:2rem;padding:0.45rem 1rem;font-size:0.75rem;font-weight:600;cursor:pointer;font-family:'Jost',sans-serif;transition:background 0.2s;}
+    .add-btn:hover{background:var(--lime);}
+
+    /* CALCULATOR */
+    .calculator{background:var(--green);}
+    .calc-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;}
+    .calc-intro .section-label{color:var(--lime);}
+    .calc-intro .section-title{color:var(--cream);}
+    .calc-intro p{color:#a0bf80;font-size:0.9rem;line-height:1.8;margin-bottom:1.2rem;}
+    .calc-perks{display:flex;flex-direction:column;gap:0.6rem;}
+    .calc-perk{display:flex;align-items:center;gap:0.7rem;font-size:0.83rem;color:#a0bf80;}
+    .calc-box{background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.12);border-radius:1.4rem;padding:2.2rem;}
+    .calc-box h3{font-family:'Playfair Display',serif;font-size:1.2rem;color:var(--cream);margin-bottom:1.3rem;}
+    .cg{margin-bottom:1rem;}
+    .cg label{display:block;font-size:0.7rem;letter-spacing:1px;text-transform:uppercase;color:#a0bf80;margin-bottom:0.4rem;}
+    .cg select,.cg input{width:100%;padding:0.75rem 1rem;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);border-radius:0.6rem;color:white;font-family:'Jost',sans-serif;font-size:0.88rem;outline:none;}
+    .cg select option{background:var(--dark);}
+    .calc-result{background:rgba(109,179,63,0.2);border:1px solid var(--lime);border-radius:0.9rem;padding:1rem;text-align:center;margin-top:0.8rem;display:none;}
+    .calc-result.show{display:block;}
+    .res-num{font-family:'Playfair Display',serif;font-size:1.8rem;color:var(--lime);font-weight:700;}
+    .res-desc{font-size:0.78rem;color:#a0bf80;margin-top:0.2rem;}
+    .calc-btn{width:100%;background:var(--lime);color:white;border:none;padding:0.88rem;border-radius:3rem;font-family:'Jost',sans-serif;font-weight:600;font-size:0.88rem;cursor:pointer;margin-top:0.4rem;transition:background 0.2s;}
+    .calc-btn:hover{background:#5aa030;}
+
+    /* CROP TOOL */
+    .crop-tool{background:var(--white);}
+    .crop-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start;}
+    .crop-selector{background:var(--cream);border:1px solid var(--tan);border-radius:1.4rem;padding:2rem;}
+    .crop-selector h3{font-family:'Playfair Display',serif;font-size:1.15rem;color:var(--green);margin-bottom:1.3rem;}
+    .crop-btns{display:flex;flex-wrap:wrap;gap:0.55rem;margin-bottom:1.3rem;}
+    .crop-btn{background:white;border:1px solid var(--tan);color:var(--text);padding:0.4rem 0.9rem;border-radius:2rem;font-size:0.78rem;cursor:pointer;font-family:'Jost',sans-serif;transition:all 0.2s;}
+    .crop-btn.active,.crop-btn:hover{background:var(--green);color:white;border-color:var(--green);}
+    .crop-result{background:white;border-radius:0.9rem;padding:1.1rem;display:none;border-left:3px solid var(--lime);}
+    .crop-result.show{display:block;}
+    .crop-result h4{font-family:'Playfair Display',serif;font-size:0.95rem;color:var(--green);margin-bottom:0.4rem;}
+    .crop-result p{font-size:0.8rem;color:var(--muted);line-height:1.7;}
+
+    /* USAGE */
+    .usage{background:var(--cream);}
+    .usage-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:1.4rem;margin-top:2.5rem;}
+    .usage-card{background:white;border:1px solid var(--tan);border-radius:1.2rem;padding:1.8rem 1.4rem;transition:transform 0.3s;}
+    .usage-card:hover{transform:translateY(-5px);}
+    .usage-step{width:34px;height:34px;border-radius:50%;background:var(--green);color:white;display:flex;align-items:center;justify-content:center;font-size:0.82rem;font-weight:700;margin-bottom:0.9rem;}
+    .usage-card h3{font-family:'Playfair Display',serif;font-size:0.95rem;color:var(--green);margin-bottom:0.4rem;}
+    .usage-card p{font-size:0.78rem;color:var(--muted);line-height:1.7;}
+
+    /* CERTIFICATIONS */
+    .certs{background:var(--dark);padding:3.5rem 4rem;text-align:center;}
+    .cert-grid{display:flex;gap:1.5rem;justify-content:center;flex-wrap:wrap;margin-top:2rem;}
+    .cert-card{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:1rem;padding:1.3rem 1.8rem;min-width:140px;}
+    .cert-icon{font-size:2.2rem;margin-bottom:0.6rem;}
+    .cert-name{font-size:0.8rem;color:var(--cream);font-weight:500;margin-bottom:0.15rem;}
+    .cert-sub{font-size:0.68rem;color:#5a7050;}
+
+    /* BULK */
+    .bulk{background:linear-gradient(135deg,#1a3a06,#2a5c0e);}
+    .bulk-inner{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;}
+    .bulk-text .section-label{color:var(--lime);}
+    .bulk-text .section-title{color:var(--cream);}
+    .bulk-text p{color:#a0bf80;font-size:0.9rem;line-height:1.8;margin-bottom:1.5rem;}
+    .bulk-perks{display:flex;flex-direction:column;gap:0.65rem;margin-bottom:2rem;}
+    .bulk-perk{display:flex;align-items:center;gap:0.7rem;font-size:0.85rem;color:#c0df90;}
+    .bulk-form{background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.12);border-radius:1.4rem;padding:2.2rem;}
+    .bulk-form h3{font-family:'Playfair Display',serif;font-size:1.15rem;color:var(--cream);margin-bottom:1.3rem;}
+
+    /* FORM */
+    .fg{margin-bottom:1rem;}
+    .fg label{display:block;font-size:0.68rem;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:var(--lime);margin-bottom:0.4rem;}
+    .fg input,.fg textarea,.fg select{width:100%;padding:0.75rem 1rem;border:1px solid rgba(255,255,255,0.15);border-radius:0.6rem;background:rgba(255,255,255,0.08);font-family:'Jost',sans-serif;font-size:0.86rem;color:white;outline:none;transition:border-color 0.2s;}
+    .fg input::placeholder,.fg textarea::placeholder{color:#5a7050;}
+    .fg input:focus,.fg textarea:focus,.fg select:focus{border-color:var(--lime);}
+    .fg select option{background:#1a3a06;}
+    .fg textarea{resize:vertical;min-height:90px;}
+    .sbtn{width:100%;background:var(--lime);color:white;border:none;padding:0.9rem;border-radius:3rem;font-family:'Jost',sans-serif;font-weight:600;font-size:0.88rem;cursor:pointer;transition:background 0.25s;}
+    .sbtn:hover{background:#5aa030;}
+
+    /* BEFORE/AFTER */
+    .results{background:var(--white);}
+    .ba-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:1.8rem;margin-top:2.5rem;}
+    .ba-card{border-radius:1.4rem;overflow:hidden;border:1px solid var(--tan);}
+    .ba-visual{display:grid;grid-template-columns:1fr 1fr;height:145px;}
+    .ba-before{background:linear-gradient(135deg,#8b7355,#c4a882);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:0.3rem;}
+    .ba-after{background:linear-gradient(135deg,#4a8c1a,#2a5c0e);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:0.3rem;}
+    .ba-label{font-size:0.6rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,0.7);}
+    .ba-icon{font-size:2.2rem;}
+    .ba-info{padding:1.3rem;}
+    .ba-info h3{font-family:'Playfair Display',serif;font-size:0.95rem;color:var(--green);margin-bottom:0.35rem;}
+    .ba-info p{font-size:0.78rem;color:var(--muted);line-height:1.6;margin-bottom:0.5rem;}
+    .ba-stat{font-size:0.72rem;font-weight:700;color:var(--lime);}
+
+    /* TESTIMONIALS */
+    .testimonials{background:var(--cream);}
+    .testi-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(265px,1fr));gap:1.6rem;}
+    .testi-card{background:white;border:1px solid var(--tan);border-radius:1.4rem;padding:1.7rem;}
+    .stars{color:#e8a020;font-size:0.82rem;margin-bottom:0.7rem;letter-spacing:2px;}
+    .testi-quote{font-size:2.2rem;color:var(--lime);font-family:'Playfair Display',serif;line-height:1;margin-bottom:0.7rem;}
+    .testi-text{font-size:0.85rem;color:var(--muted);line-height:1.8;margin-bottom:1.2rem;font-style:italic;}
+    .testi-author{display:flex;align-items:center;gap:0.7rem;}
+    .testi-avatar{width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,var(--lime),var(--green));display:flex;align-items:center;justify-content:center;font-size:1.1rem;}
+    .testi-name{font-weight:600;font-size:0.85rem;color:var(--text);}
+    .testi-role{font-size:0.7rem;color:var(--muted);}
+    .verified{font-size:0.62rem;color:var(--lime);font-weight:700;margin-top:0.1rem;}
+
+    /* FAQ */
+    .faq{background:var(--white);}
+    .faq-grid{display:grid;grid-template-columns:1fr 1fr;gap:3.5rem;align-items:start;}
+    .faq-list{display:flex;flex-direction:column;gap:0.7rem;}
+    .faq-item{border:1px solid var(--tan);border-radius:1rem;overflow:hidden;}
+    .faq-q{display:flex;justify-content:space-between;align-items:center;padding:1rem 1.3rem;cursor:pointer;background:white;font-weight:500;font-size:0.87rem;color:var(--text);gap:1rem;}
+    .faq-arrow{font-size:0.65rem;transition:transform 0.3s;flex-shrink:0;}
+    .faq-item.open .faq-arrow{transform:rotate(180deg);}
+    .faq-a{max-height:0;overflow:hidden;transition:max-height 0.35s ease;}
+    .faq-item.open .faq-a{max-height:200px;}
+    .faq-a p{font-size:0.8rem;color:var(--muted);line-height:1.8;padding:0 1.3rem 1.1rem;}
+    .faq-contact{background:var(--cream);border-radius:1.4rem;padding:2.2rem;border:1px solid var(--tan);}
+    .faq-contact h3{font-family:'Playfair Display',serif;font-size:1.2rem;color:var(--green);margin-bottom:0.7rem;}
+    .faq-contact p{font-size:0.86rem;color:var(--muted);line-height:1.8;margin-bottom:1.3rem;}
+    .c-methods{display:flex;flex-direction:column;gap:0.9rem;}
+    .c-method{display:flex;align-items:center;gap:0.9rem;font-size:0.85rem;color:var(--text);}
+    .c-icon{width:38px;height:38px;border-radius:50%;background:white;border:1px solid var(--tan);display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0;}
+
+    /* BLOG */
+    .blog{background:var(--cream);}
+    .blog-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(268px,1fr));gap:1.6rem;}
+    .blog-card{background:white;border-radius:1.4rem;overflow:hidden;border:1px solid var(--tan);cursor:pointer;transition:transform 0.3s,box-shadow 0.3s;}
+    .blog-card:hover{transform:translateY(-5px);box-shadow:0 14px 38px #2a5c0e10;}
+    .blog-img{height:148px;display:flex;align-items:center;justify-content:center;font-size:3.8rem;background:linear-gradient(135deg,#d0e8b8,#a8d080);}
+    .blog-body{padding:1.3rem;}
+    .blog-tag{font-size:0.62rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--lime);margin-bottom:0.5rem;}
+    .blog-body h3{font-family:'Playfair Display',serif;font-size:0.95rem;color:var(--green);margin-bottom:0.5rem;line-height:1.4;}
+    .blog-body p{font-size:0.78rem;color:var(--muted);line-height:1.7;margin-bottom:0.8rem;}
+    .blog-meta{font-size:0.7rem;color:var(--muted);display:flex;gap:1rem;}
+
+    /* DEALER */
+    .dealer{background:var(--dark);}
+    .dealer-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;margin-top:2.5rem;align-items:start;}
+    .dealer-areas{display:grid;grid-template-columns:1fr 1fr;gap:0.9rem;}
+    .area-card{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:0.9rem;padding:1.1rem;}
+    .area-card h4{font-size:0.85rem;color:var(--cream);font-weight:600;margin-bottom:0.3rem;}
+    .area-card p{font-size:0.73rem;color:#5a7050;line-height:1.6;}
+    .area-status{display:inline-block;font-size:0.6rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:0.12rem 0.55rem;border-radius:1rem;margin-bottom:0.4rem;}
+    .area-status.active{background:#2a5c0e80;color:var(--lime);}
+    .area-status.new{background:#6b3a0080;color:var(--gold);}
+    .dealer-form{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:1.4rem;padding:2.2rem;}
+    .dealer-form h3{font-family:'Playfair Display',serif;font-size:1.15rem;color:var(--cream);margin-bottom:1.3rem;}
+
+    /* NEWSLETTER */
+    .newsletter{background:var(--lime);padding:3.5rem 4rem;}
+    .news-inner{display:flex;align-items:center;justify-content:space-between;gap:2.5rem;flex-wrap:wrap;}
+    .news-text h2{font-family:'Playfair Display',serif;font-size:1.7rem;color:white;}
+    .news-text p{font-size:0.85rem;color:rgba(255,255,255,0.8);margin-top:0.3rem;}
+    .news-form{display:flex;gap:0.7rem;flex-wrap:wrap;}
+    .news-form input{padding:0.8rem 1.2rem;border:none;border-radius:3rem;font-family:'Jost',sans-serif;font-size:0.85rem;min-width:240px;outline:none;}
+    .news-form button{background:var(--green);color:white;border:none;padding:0.8rem 1.6rem;border-radius:3rem;font-family:'Jost',sans-serif;font-weight:600;font-size:0.85rem;cursor:pointer;transition:background 0.2s;}
+    .news-form button:hover{background:var(--dark);}
+
+    /* CONTACT */
+    .contact{background:var(--white);}
+    .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start;}
+    .contact-info{display:flex;flex-direction:column;gap:0.9rem;margin-top:1.8rem;}
+    .contact-item{display:flex;align-items:flex-start;gap:0.9rem;font-size:0.86rem;color:var(--text);line-height:1.6;}
+    .ci-icon{width:40px;height:40px;border-radius:50%;background:var(--cream);border:1px solid var(--tan);display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0;}
+    .contact-form{background:var(--cream);border:1px solid var(--tan);border-radius:1.4rem;padding:2.2rem;}
+    .contact-form h3{font-family:'Playfair Display',serif;font-size:1.2rem;color:var(--green);margin-bottom:1.3rem;}
+    .cfg{margin-bottom:1rem;}
+    .cfg label{display:block;font-size:0.68rem;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:var(--green);margin-bottom:0.4rem;}
+    .cfg input,.cfg textarea,.cfg select{width:100%;padding:0.75rem 1rem;border:1px solid var(--tan);border-radius:0.6rem;background:white;font-family:'Jost',sans-serif;font-size:0.86rem;color:var(--text);outline:none;transition:border-color 0.2s;}
+    .cfg input:focus,.cfg textarea:focus,.cfg select:focus{border-color:var(--lime);}
+    .cfg textarea{resize:vertical;min-height:100px;}
+    .cfg input::placeholder,.cfg textarea::placeholder{color:var(--muted);}
+    .csbtn{width:100%;background:var(--green);color:white;border:none;padding:0.9rem;border-radius:3rem;font-family:'Jost',sans-serif;font-weight:600;font-size:0.88rem;cursor:pointer;transition:background 0.25s;}
+    .csbtn:hover{background:var(--lime);}
+    .map-box{background:var(--cream);border:1px solid var(--tan);border-radius:0.9rem;height:180px;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:0.4rem;margin-top:1.3rem;color:var(--muted);font-size:0.82rem;cursor:pointer;transition:background 0.2s;}
+    .map-box:hover{background:var(--tan);}
+    .map-box span:first-child{font-size:2.2rem;}
+
+    /* CART OVERLAY */
+    .cart-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.5);z-index:2000;display:none;align-items:flex-start;justify-content:flex-end;}
+    .cart-overlay.open{display:flex;}
+    .cart-panel{background:white;width:360px;height:100vh;overflow-y:auto;padding:1.8rem;box-shadow:-10px 0 40px #0003;}
+    .cart-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:1.8rem;}
+    .cart-header h2{font-family:'Playfair Display',serif;font-size:1.3rem;color:var(--green);}
+    .cart-close{background:none;border:none;font-size:1.4rem;cursor:pointer;color:var(--muted);}
+    .cart-items{display:flex;flex-direction:column;gap:0.9rem;min-height:180px;}
+    .cart-item{display:flex;gap:0.9rem;align-items:center;padding:0.9rem;background:var(--cream);border-radius:0.9rem;}
+    .cart-item-icon{font-size:1.8rem;width:44px;text-align:center;}
+    .cart-item-info{flex:1;}
+    .cart-item-name{font-weight:600;font-size:0.85rem;color:var(--text);}
+    .cart-item-price{font-size:0.78rem;color:var(--lime);font-weight:700;}
+    .cart-item-remove{background:none;border:none;color:var(--muted);cursor:pointer;font-size:0.95rem;}
+    .cart-empty{text-align:center;padding:2.5rem 0;color:var(--muted);font-size:0.88rem;}
+    .cart-empty span{font-size:2.8rem;display:block;margin-bottom:0.7rem;}
+    .cart-total{border-top:1px solid var(--tan);padding-top:1.3rem;margin-top:1.3rem;}
+    .cart-row{display:flex;justify-content:space-between;font-size:0.85rem;margin-bottom:0.4rem;color:var(--muted);}
+    .cart-row.grand{font-weight:700;color:var(--text);font-size:0.95rem;margin-top:0.4rem;}
+    .checkout-btn{width:100%;background:var(--green);color:white;border:none;padding:0.9rem;border-radius:3rem;font-family:'Jost',sans-serif;font-weight:600;font-size:0.88rem;cursor:pointer;margin-top:0.9rem;transition:background 0.2s;}
+    .checkout-btn:hover{background:var(--lime);}
+
+    /* LOGIN MODAL */
+    .modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.6);z-index:3000;display:none;align-items:center;justify-content:center;}
+    .modal-overlay.open{display:flex;}
+    .modal-box{background:white;border-radius:1.4rem;padding:2.2rem;width:100%;max-width:400px;position:relative;}
+    .modal-close{position:absolute;top:0.9rem;right:0.9rem;background:none;border:none;font-size:1.2rem;cursor:pointer;color:var(--muted);}
+    .modal-box h2{font-family:'Playfair Display',serif;font-size:1.5rem;color:var(--green);margin-bottom:0.3rem;}
+    .modal-box .modal-sub{font-size:0.82rem;color:var(--muted);margin-bottom:1.5rem;}
+    .modal-tabs{display:flex;border:1px solid var(--tan);border-radius:2rem;overflow:hidden;margin-bottom:1.5rem;}
+    .modal-tab{flex:1;text-align:center;padding:0.55rem;font-size:0.8rem;font-weight:600;cursor:pointer;transition:all 0.2s;background:none;border:none;font-family:'Jost',sans-serif;color:var(--muted);}
+    .modal-tab.active{background:var(--green);color:white;}
+    .mfg{margin-bottom:0.9rem;}
+    .mfg label{display:block;font-size:0.68rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--green);margin-bottom:0.4rem;}
+    .mfg input{width:100%;padding:0.72rem 1rem;border:1px solid var(--tan);border-radius:0.6rem;background:var(--cream);font-family:'Jost',sans-serif;font-size:0.86rem;color:var(--text);outline:none;}
+    .msbtn{width:100%;background:var(--green);color:white;border:none;padding:0.88rem;border-radius:3rem;font-family:'Jost',sans-serif;font-weight:600;font-size:0.88rem;cursor:pointer;margin-top:0.5rem;transition:background 0.2s;}
+    .msbtn:hover{background:var(--lime);}
+
+    /* FOOTER */
+    footer{background:var(--dark);color:var(--cream);padding:4rem 4rem 2rem;}
+    .footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:2.5rem;margin-bottom:2.5rem;}
+    .footer-logo{font-family:'Playfair Display',serif;font-size:1.4rem;font-weight:700;color:var(--cream);margin-bottom:0.8rem;}
+    .footer-logo span{color:var(--lime);font-style:italic;}
+    .footer-about{font-size:0.8rem;color:#4a6040;line-height:1.8;margin-bottom:1.3rem;}
+    .social-links{display:flex;gap:0.6rem;}
+    .social-link{width:34px;height:34px;border-radius:50%;background:rgba(255,255,255,0.06);display:flex;align-items:center;justify-content:center;font-size:0.85rem;cursor:pointer;transition:background 0.2s;text-decoration:none;}
+    .social-link:hover{background:var(--lime);}
+    .footer-col h4{font-size:0.68rem;letter-spacing:2px;text-transform:uppercase;color:var(--lime);margin-bottom:1.1rem;font-weight:700;}
+    .footer-col ul{list-style:none;display:flex;flex-direction:column;gap:0.55rem;}
+    .footer-col ul a{font-size:0.8rem;color:#4a6040;text-decoration:none;transition:color 0.2s;}
+    .footer-col ul a:hover{color:var(--cream);}
+    .footer-bottom{border-top:1px solid rgba(255,255,255,0.07);padding-top:1.8rem;display:flex;justify-content:space-between;align-items:center;font-size:0.72rem;color:#2a4020;flex-wrap:wrap;gap:0.4rem;}
+
+    /* RESPONSIVE */
+    @media(max-width:1024px){nav{padding:1rem 2rem;}section{padding:4.5rem 2rem;}.stats-bar{padding:2.5rem 2rem;grid-template-columns:repeat(2,1fr);}.calc-grid,.crop-grid,.bulk-inner,.dealer-grid,.contact-grid,.faq-grid,.about-grid{grid-template-columns:1fr;}.footer-grid{grid-template-columns:1fr 1fr;}}
+    @media(max-width:768px){.nav-links{display:none;}.hamburger{display:flex;}.hero{grid-template-columns:1fr;padding:5rem 2rem 3rem;text-align:center;}.hero-sub{margin:0 auto 1.8rem;}.hero-btns{justify-content:center;}.hero-trust{justify-content:center;}.hero-visual{display:none;}.news-inner{flex-direction:column;text-align:center;}.certs{padding:3rem 2rem;}.newsletter{padding:3rem 2rem;}.dealer-areas{grid-template-columns:1fr;}}
+    @media(max-width:480px){.stats-bar{grid-template-columns:1fr 1fr;}.footer-grid{grid-template-columns:1fr;}.footer-bottom{flex-direction:column;text-align:center;}.cart-panel{width:100vw;}}
+  </style>
+</head>
+<body>
+
+<!-- LOADER -->
+<div id="loader"><div class="loader-logo">B.S.<span>Organic</span> Manure</div><div class="loader-bar"><div class="loader-fill"></div></div></div>
+
+<!-- WHATSAPP & BACK TO TOP -->
+<a class="wa-float" href="https://wa.me/919671009006?text=Hello+B.S.+Organic+Manure%2C+I+want+to+enquire+about+your+products." target="_blank">💬</a>
+<button id="backTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<!-- CART OVERLAY -->
+<div class="cart-overlay" id="cartOverlay" onclick="if(event.target===this)closeCart()">
+  <div class="cart-panel">
+    <div class="cart-header"><h2>🛒 Your Cart</h2><button class="cart-close" onclick="closeCart()">✕</button></div>
+    <div class="cart-items" id="cartItems"><div class="cart-empty"><span>🌱</span>Your cart is empty.<br>Add some organic products!</div></div>
+    <div class="cart-total" id="cartTotal" style="display:none;">
+      <div class="cart-row"><span>Subtotal</span><span id="subtotal">₹0</span></div>
+      <div class="cart-row"><span>Delivery</span><span>FREE</span></div>
+      <div class="cart-row grand"><span>Total</span><span id="grandTotal">₹0</span></div>
+      <button class="checkout-btn" onclick="checkout()">Proceed to Checkout →</button>
+    </div>
+  </div>
+</div>
+
+<!-- CHECKOUT OVERLAY -->
+<div class="cart-overlay" id="checkoutOverlay" onclick="if(event.target===this)closeCheckout()">
+  <div class="cart-panel">
+    <div class="cart-header"><h2>📋 Checkout</h2><button class="cart-close" onclick="closeCheckout()">✕</button></div>
+    <p class="modal-sub" style="margin-bottom:1.2rem;">Enter your delivery details. Our team will call to confirm payment.</p>
+    <div class="mfg"><label>Full Name</label><input type="text" id="co-name" placeholder="Your name"/></div>
+    <div class="mfg"><label>Phone Number</label><input type="tel" id="co-phone" placeholder="+91 00000 00000"/></div>
+    <div class="mfg"><label>Delivery Address</label><input type="text" id="co-address" placeholder="House no, street, village/city, pincode"/></div>
+    <div class="cart-total" style="display:block;">
+      <div class="cart-row grand"><span>Order Total</span><span id="co-total">₹0</span></div>
+      <button class="checkout-btn" id="co-submit-btn" onclick="submitOrder()">Place Order →</button>
+    </div>
+  </div>
+</div>
+
+<!-- LOGIN MODAL -->
+<div class="modal-overlay" id="loginModal" onclick="if(event.target===this)closeLogin()">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeLogin()">✕</button>
+    <h2>Welcome 🌿</h2><p class="modal-sub">Login to track orders and manage your account.</p>
+    <div class="modal-tabs">
+      <button class="modal-tab active" onclick="switchTab('login')">Login</button>
+      <button class="modal-tab" onclick="switchTab('signup')">Sign Up</button>
+    </div>
+    <div id="loginForm">
+      <div class="mfg"><label>Email</label><input type="email" id="login-email" placeholder="you@example.com"/></div>
+      <div class="mfg"><label>Password</label><input type="password" id="login-password" placeholder="••••••••"/></div>
+      <button class="msbtn" id="login-btn" onclick="handleLogin()">Login →</button>
+    </div>
+    <div id="signupForm" style="display:none;">
+      <div class="mfg"><label>Full Name</label><input type="text" id="signup-name" placeholder="Your name"/></div>
+      <div class="mfg"><label>Email</label><input type="email" id="signup-email" placeholder="you@example.com"/></div>
+      <div class="mfg"><label>Phone</label><input type="tel" id="signup-phone" placeholder="+91 00000 00000"/></div>
+      <div class="mfg"><label>Password</label><input type="password" id="signup-password" placeholder="••••••••"/></div>
+      <button class="msbtn" id="signup-btn" onclick="handleSignup()">Create Account →</button>
+    </div>
+  </div>
+</div>
+
+<!-- NAVBAR -->
+<nav id="navbar">
+  <div class="logo" onclick="window.scrollTo({top:0,behavior:'smooth'})">B.S.<span>Organic</span> Manure</div>
+  <ul class="nav-links">
+    <li><a href="#products">Products</a></li>
+    <li><a href="#calculator">Calculator</a></li>
+    <li><a href="#bulk">Bulk Order</a></li>
+    <li><a href="#blog">Blog</a></li>
+    <li><a href="#dealer">Dealers</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="#" onclick="openLogin();return false;" style="color:var(--lime);">Login</a></li>
+    <li><button class="cart-btn" onclick="openCart()">🛒 Cart <span class="cart-count" id="cartCount">0</span></button></li>
+  </ul>
+  <div class="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#products" onclick="toggleMenu()">Products</a>
+  <a href="#calculator" onclick="toggleMenu()">Calculator</a>
+  <a href="#bulk" onclick="toggleMenu()">Bulk Order</a>
+  <a href="#blog" onclick="toggleMenu()">Blog</a>
+  <a href="#contact" onclick="toggleMenu()">Contact</a>
+  <a href="#" onclick="openLogin();toggleMenu();return false;">Login / Sign Up</a>
+  <a href="#" onclick="openCart();toggleMenu();return false;">🛒 Cart (<span id="mobileCartCount">0</span>)</a>
+</div>
+
+<!-- MARQUEE -->
+<div class="marquee-wrap">
+  <div class="marquee">
+    <span>100% Organic</span><span class="dot">✦</span><span>Chemical-Free</span><span class="dot">✦</span><span>Improves Soil Fertility</span><span class="dot">✦</span><span>Eco Certified</span><span class="dot">✦</span><span>Bulk Orders Welcome</span><span class="dot">✦</span><span>Pan India Delivery</span><span class="dot">✦</span><span>Farm Direct</span><span class="dot">✦</span>
+    <span>100% Organic</span><span class="dot">✦</span><span>Chemical-Free</span><span class="dot">✦</span><span>Improves Soil Fertility</span><span class="dot">✦</span><span>Eco Certified</span><span class="dot">✦</span><span>Bulk Orders Welcome</span><span class="dot">✦</span><span>Pan India Delivery</span><span class="dot">✦</span><span>Farm Direct</span><span class="dot">✦</span>
+  </div>
+</div>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div>
+    <span class="hero-badge">🌿 Certified Organic Manure</span>
+    <h1>Pure Soil.<br><em>Better Crops.</em><br>Naturally.</h1>
+    <p class="hero-sub">B.S. Organic Manure delivers 100% natural, chemical-free fertilizer solutions crafted to boost soil health and maximize crop yield — season after season.</p>
+    <div class="hero-btns">
+      <a href="#products" class="btn-primary">Shop Products</a>
+      <a href="#bulk" class="btn-gold">Bulk Order</a>
+      <a href="#calculator" class="btn-outline">Calculate Need</a>
+    </div>
+    <div class="hero-trust">
+      <div class="trust-item"><span>✅</span><span>No Chemicals</span></div>
+      <div class="trust-item"><span>🚚</span><span>Free Delivery ₹999+</span></div>
+      <div class="trust-item"><span>🔄</span><span>7-Day Returns</span></div>
+      <div class="trust-item"><span>🌾</span><span>10,000+ Farmers</span></div>
+    </div>
+  </div>
+  <div class="hero-visual">
+    <div class="hero-circle">
+      <div class="hero-circle-inner">
+        <div class="hero-icon">🌱</div>
+        <h3>B.S. Organic Manure</h3>
+        <p>Pure · Natural · Powerful</p>
+      </div>
+      <div class="float-tag">🌾 Boosts yield 40%</div>
+      <div class="float-tag">💧 Better water retention</div>
+      <div class="float-tag">🧪 Lab certified</div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="stats-bar">
+  <div class="stat-item reveal"><div class="stat-num">10K+</div><div class="stat-label">Happy Farmers</div></div>
+  <div class="stat-item reveal"><div class="stat-num">500T+</div><div class="stat-label">Manure Sold</div></div>
+  <div class="stat-item reveal"><div class="stat-num">12+</div><div class="stat-label">Product Varieties</div></div>
+  <div class="stat-item reveal"><div class="stat-num">18</div><div class="stat-label">States Covered</div></div>
+</div>
+
+<!-- ABOUT -->
+<section id="about" style="background:var(--cream);">
+  <div class="about-grid reveal">
+    <div>
+      <p class="section-label">Our Story</p>
+      <h2 class="section-title">Rooted in the Land,<br>Committed to Farmers</h2>
+      <p style="color:var(--muted);font-size:0.9rem;line-height:1.9;margin-bottom:1rem;">Established in <strong>2021</strong> at <strong>Jhajjar, Haryana</strong>, B.S. Organic Manure is a partnership firm engaged as a manufacturer of Bio Fertilizer, Organic Vermicompost, Earthworm Vermicompost, and Organic Manure products.</p>
+      <p style="color:var(--muted);font-size:0.9rem;line-height:1.9;margin-bottom:2rem;">We believe chemical fertilizers damage long-term soil health. Our 100% natural, organic products — from hand-filtered manure to live earthworms — are trusted by farmers across Haryana and beyond for healthier soil and better yields.</p>
+      <a href="#contact" class="btn-primary">Learn More</a>
+    </div>
+    <div class="about-cards">
+      <div class="acard dark"><div class="acard-icon">🌾</div><div class="acard-title">Farm Direct</div><div class="acard-text">Sourced straight from certified organic composting units.</div></div>
+      <div class="acard light"><div class="acard-icon">🧪</div><div class="acard-title">Lab Tested</div><div class="acard-text">Every batch tested for NPK content and purity.</div></div>
+      <div class="acard light"><div class="acard-icon">♻️</div><div class="acard-title">Eco Packed</div><div class="acard-text">Biodegradable jute sacks — zero plastic waste.</div></div>
+      <div class="acard light"><div class="acard-icon">🏆</div><div class="acard-title">Award Winning</div><div class="acard-text">State Agri Dept. recognized brand 2023.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- PRODUCTS -->
+<section class="products" id="products">
+  <div class="section-header reveal">
+    <p class="section-label">Our Products</p>
+    <h2 class="section-title">Pure Manure for Every Farm</h2>
+    <p class="section-sub">From vermicompost to cow dung manure — choose the right organic feed for your soil and crops.</p>
+  </div>
+  <div class="product-tabs">
+    <button class="tab-btn active" onclick="filterProducts('all',this)">All</button>
+    <button class="tab-btn" onclick="filterProducts('manure',this)">Organic Manure</button>
+    <button class="tab-btn" onclick="filterProducts('vermi',this)">Vermicompost</button>
+    <button class="tab-btn" onclick="filterProducts('earthworm',this)">Earthworms</button>
+    <button class="tab-btn" onclick="filterProducts('liquid',this)">Liquid</button>
+  </div>
+  <div class="product-grid" id="productGrid">
+
+    <div class="product-card reveal" data-cat="manure">
+      <div class="product-img" style="padding:0;overflow:hidden;position:relative;">
+        <img src="https://5.imimg.com/data5/SELLER/Default/2022/1/UF/GM/XX/125393589/hand-filtered-organic-manure-250x250.jpeg" alt="Hand Filtered Organic Manure" style="width:100%;height:100%;object-fit:cover;display:block;"/>
+        <span class="product-badge" style="position:absolute;top:0.9rem;right:0.9rem;">Best Seller</span>
+      </div>
+      <div class="product-info">
+        <h3>Hand Filtered Organic Manure</h3>
+        <p>Finely hand-filtered organic manure in granule form. Animal-based, suitable for all crops.</p>
+        <div class="product-meta"><span class="meta-tag">All Crops</span><span class="meta-tag">Granules</span><span class="meta-tag">Animal Based</span></div>
+        <div class="product-footer"><span class="price">&#8377;20<small>/Kg</small></span><button class="add-btn" onclick="addToCart('Hand Filtered Organic Manure',20,'&#127807;')">Add to Cart</button></div>
+      </div>
+    </div>
+
+    <div class="product-card reveal" data-cat="manure">
+      <div class="product-img" style="padding:0;overflow:hidden;position:relative;">
+        <img src="https://5.imimg.com/data5/SELLER/Default/2022/1/ML/SR/GN/125393589/animal-based-organic-manure-250x250.png" alt="Animal Based Organic Manure" style="width:100%;height:100%;object-fit:cover;display:block;"/>
+      </div>
+      <div class="product-info">
+        <h3>Animal Based Organic Manure</h3>
+        <p>Premium animal-based organic manure in granule form. Enriches soil and boosts crop yield naturally.</p>
+        <div class="product-meta"><span class="meta-tag">All Crops</span><span class="meta-tag">Granules</span><span class="meta-tag">Agriculture</span></div>
+        <div class="product-footer"><span class="price">&#8377;22<small>/Kg</small></span><button class="add-btn" onclick="addToCart('Animal Based Organic Manure',22,'&#128004;')">Add to Cart</button></div>
+      </div>
+    </div>
+
+    <div class="product-card reveal" data-cat="manure">
+      <div class="product-img" style="padding:0;overflow:hidden;position:relative;">
+        <img src="https://5.imimg.com/data5/SELLER/Default/2022/1/PV/AR/YD/125393589/making-of-bed-250x250.jpeg" alt="Plant Based Organic Manure" style="width:100%;height:100%;object-fit:cover;display:block;"/>
+      </div>
+      <div class="product-info">
+        <h3>Plant Based Organic Manure</h3>
+        <p>100% plant-derived organic manure — rich in natural nutrients for sustainable eco-friendly farming.</p>
+        <div class="product-meta"><span class="meta-tag">All Crops</span><span class="meta-tag">Plant Based</span><span class="meta-tag">Agriculture</span></div>
+        <div class="product-footer"><span class="price">&#8377;25<small>/Kg</small></span><button class="add-btn" onclick="addToCart('Plant Based Organic Manure',25,'&#127807;')">Add to Cart</button></div>
+      </div>
+    </div>
+
+    <div class="product-card reveal" data-cat="vermi">
+      <div class="product-img" style="padding:0;overflow:hidden;position:relative;">
+        <img src="https://5.imimg.com/data5/SELLER/Default/2022/1/NI/OE/PL/125393589/25kg-b-s-organic-vermicompost-250x250.jpg" alt="25Kg Organic Vermicompost" style="width:100%;height:100%;object-fit:cover;display:block;"/>
+        <span class="product-badge hot" style="position:absolute;top:0.9rem;right:0.9rem;">Popular</span>
+      </div>
+      <div class="product-info">
+        <h3>25 Kg Organic Vermicompost</h3>
+        <p>Premium vermicompost in 25 Kg bags. Granule form with controlled release — ideal for all plants and crops.</p>
+        <div class="product-meta"><span class="meta-tag">All Crops</span><span class="meta-tag">Granules</span><span class="meta-tag">25 Kg Bag</span></div>
+        <div class="product-footer"><span class="price">&#8377;160<small>/Kg</small></span><button class="add-btn" onclick="addToCart('25 Kg Organic Vermicompost',160,'&#129419;')">Add to Cart</button></div>
+      </div>
+    </div>
+
+    <div class="product-card reveal" data-cat="vermi">
+      <div class="product-img" style="padding:0;overflow:hidden;position:relative;">
+        <img src="https://5.imimg.com/data5/SELLER/Default/2022/1/PG/VP/AT/125393589/5kg-b-s-organic-vermicompost-250x250.jpg" alt="5Kg Organic Vermicompost" style="width:100%;height:100%;object-fit:cover;display:block;"/>
+        <span class="product-badge" style="position:absolute;top:0.9rem;right:0.9rem;">New</span>
+      </div>
+      <div class="product-info">
+        <h3>5 Kg Organic Vermicompost</h3>
+        <p>Compact 5 Kg pack of pure vermicompost — perfect for home gardens, small farms, and kitchen gardens.</p>
+        <div class="product-meta"><span class="meta-tag">All Plants</span><span class="meta-tag">5 Kg Pack</span><span class="meta-tag">Home Garden</span></div>
+        <div class="product-footer"><span class="price">&#8377;70<small>/Kg</small></span><button class="add-btn" onclick="addToCart('5 Kg Organic Vermicompost',70,'&#127807;')">Add to Cart</button></div>
+      </div>
+    </div>
+
+    <div class="product-card reveal" data-cat="vermi">
+      <div class="product-img" style="padding:0;overflow:hidden;position:relative;">
+        <img src="https://5.imimg.com/data5/SELLER/Default/2022/1/IU/UI/PW/125393589/super-charged-vermicompost-250x250.jpg" alt="Super Charged Vermicompost" style="width:100%;height:100%;object-fit:cover;display:block;"/>
+        <span class="product-badge hot" style="position:absolute;top:0.9rem;right:0.9rem;">Premium</span>
+      </div>
+      <div class="product-info">
+        <h3>Super Charged Vermicompost</h3>
+        <p>High-potency powder vermicompost with 7.5% moisture. Controlled release for maximum soil enrichment.</p>
+        <div class="product-meta"><span class="meta-tag">All Crops</span><span class="meta-tag">Powder</span><span class="meta-tag">Controlled Release</span></div>
+        <div class="product-footer"><span class="price">&#8377;50<small>/Kg</small></span><button class="add-btn" onclick="addToCart('Super Charged Vermicompost',50,'&#9889;')">Add to Cart</button></div>
+      </div>
+    </div>
+
+    <div class="product-card reveal" data-cat="vermi">
+      <div class="product-img" style="padding:0;overflow:hidden;position:relative;">
+        <img src="https://5.imimg.com/data5/SELLER/Default/2022/1/VE/SX/YQ/125393589/organic-neem-vermicompost-250x250.jpeg" alt="Organic Neem Vermicompost" style="width:100%;height:100%;object-fit:cover;display:block;"/>
+      </div>
+      <div class="product-info">
+        <h3>Organic Neem Vermicompost</h3>
+        <p>Vermicompost enriched with neem — natural pest resistance plus deep soil nutrition for all crops.</p>
+        <div class="product-meta"><span class="meta-tag">Pest Resistant</span><span class="meta-tag">Neem Enriched</span><span class="meta-tag">All Crops</span></div>
+        <div class="product-footer"><span class="price">&#8377;55<small>/Kg</small></span><button class="add-btn" onclick="addToCart('Organic Neem Vermicompost',55,'&#127807;')">Add to Cart</button></div>
+      </div>
+    </div>
+
+    <div class="product-card reveal" data-cat="earthworm">
+      <div class="product-img" style="padding:0;overflow:hidden;position:relative;">
+        <img src="https://5.imimg.com/data5/SELLER/Default/2022/1/GI/TV/LB/125393589/organic-live-earthworms-250x250.jpg" alt="Organic Live Earthworms" style="width:100%;height:100%;object-fit:cover;display:block;"/>
+        <span class="product-badge" style="position:absolute;top:0.9rem;right:0.9rem;">Live</span>
+      </div>
+      <div class="product-info">
+        <h3>Organic Live Earthworms</h3>
+        <p>100% organic live earthworms for composting. Loose packing, boosts soil microbial activity naturally.</p>
+        <div class="product-meta"><span class="meta-tag">100% Organic</span><span class="meta-tag">Live</span><span class="meta-tag">Agriculture</span></div>
+        <div class="product-footer"><span class="price">&#8377;290<small>/Kg</small></span><button class="add-btn" onclick="addToCart('Organic Live Earthworms',290,'&#128027;')">Add to Cart</button></div>
+      </div>
+    </div>
+
+    <div class="product-card reveal" data-cat="earthworm">
+      <div class="product-img" style="padding:0;overflow:hidden;position:relative;">
+        <img src="https://5.imimg.com/data5/SELLER/Default/2022/1/WB/XQ/OR/125393589/earthworms-australian-breed-250x250.jpeg" alt="Australian Breed Live Earthworms" style="width:100%;height:100%;object-fit:cover;display:block;"/>
+        <span class="product-badge hot" style="position:absolute;top:0.9rem;right:0.9rem;">Premium</span>
+      </div>
+      <div class="product-info">
+        <h3>Australian Breed Earthworms</h3>
+        <p>High-grade Australian breed earthworms — faster composting and stronger soil enrichment for all crops.</p>
+        <div class="product-meta"><span class="meta-tag">Australian Breed</span><span class="meta-tag">Live</span><span class="meta-tag">All Crops</span></div>
+        <div class="product-footer"><span class="price">&#8377;280<small>/Kg</small></span><button class="add-btn" onclick="addToCart('Australian Breed Earthworms',280,'&#128027;')">Add to Cart</button></div>
+      </div>
+    </div>
+
+    <div class="product-card reveal" data-cat="liquid">
+      <div class="product-img" style="padding:0;overflow:hidden;position:relative;">
+        <img src="https://5.imimg.com/data5/SELLER/Default/2022/1/TA/UO/WP/125393589/organic-vermiwash-liquid-250x250.jpg" alt="Organic Vermiwash Liquid" style="width:100%;height:100%;object-fit:cover;display:block;"/>
+        <span class="product-badge" style="position:absolute;top:0.9rem;right:0.9rem;">Liquid</span>
+      </div>
+      <div class="product-info">
+        <h3>Organic Vermiwash Liquid</h3>
+        <p>100% organic liquid vermiwash with controlled release. Apply to roots or as foliar spray for all plants.</p>
+        <div class="product-meta"><span class="meta-tag">100% Organic</span><span class="meta-tag">Liquid</span><span class="meta-tag">All Plants</span></div>
+        <div class="product-footer"><span class="price">&#8377;150<small>/Litre</small></span><button class="add-btn" onclick="addToCart('Organic Vermiwash Liquid',150,'&#128167;')">Add to Cart</button></div>
+      </div>
+    </div>
+
+    <div class="product-card reveal" data-cat="liquid">
+      <div class="product-img" style="padding:0;overflow:hidden;position:relative;">
+        <img src="https://5.imimg.com/data5/SELLER/Default/2022/1/EU/BZ/DB/125393589/organic-vermicompost-bio-fertilizers-250x250.jpeg" alt="Organic Bio Fertilizer" style="width:100%;height:100%;object-fit:cover;display:block;"/>
+      </div>
+      <div class="product-info">
+        <h3>Organic Bio Fertilizer</h3>
+        <p>Certified organic bio fertilizer in loose packaging. Suitable for all crops and agriculture applications.</p>
+        <div class="product-meta"><span class="meta-tag">All Crops</span><span class="meta-tag">Organic</span><span class="meta-tag">Agriculture</span></div>
+        <div class="product-footer"><span class="price">&#8377;20<small>/Kg</small></span><button class="add-btn" onclick="addToCart('Organic Bio Fertilizer',20,'&#129514;')">Add to Cart</button></div>
+      </div>
+    </div>
+
+  </div>
+</div>
+</section>
+
+<!-- CALCULATOR -->
+<section class="calculator" id="calculator">
+  <div class="calc-grid">
+    <div class="calc-intro reveal">
+      <p class="section-label">Smart Tool</p>
+      <h2 class="section-title" style="color:var(--cream);">Fertilizer<br>Calculator</h2>
+      <p>Not sure how much manure you need? Enter your land size and crop type — our calculator tells you exactly how many bags to order. No guessing, no waste.</p>
+      <div class="calc-perks">
+        <div class="calc-perk"><span>✅</span><span>Accurate for all major Indian crops</span></div>
+        <div class="calc-perk"><span>✅</span><span>Based on ICAR recommendations</span></div>
+        <div class="calc-perk"><span>✅</span><span>Saves money on over-ordering</span></div>
+      </div>
+    </div>
+    <div class="calc-box reveal">
+      <h3>Calculate Your Need</h3>
+      <div class="cg"><label>Crop Type</label><select id="cropType"><option value="wheat">Wheat</option><option value="rice">Rice / Paddy</option><option value="vegetables">Vegetables</option><option value="sugarcane">Sugarcane</option><option value="cotton">Cotton</option><option value="maize">Maize / Corn</option><option value="fruit">Fruit Orchard</option></select></div>
+      <div class="cg"><label>Land Area</label><input type="number" id="landArea" placeholder="e.g. 2" min="0.1" step="0.1"/></div>
+      <div class="cg"><label>Area Unit</label><select id="areaUnit"><option value="acre">Acres</option><option value="hectare">Hectares</option><option value="bigha">Bigha</option></select></div>
+      <button class="calc-btn" onclick="calculateManure()">Calculate Now 🌾</button>
+      <div class="calc-result" id="calcResult"><div class="res-num" id="resNum">0 bags</div><div class="res-desc" id="resDesc">Recommended for your field</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CROP RECOMMENDATION -->
+<section class="crop-tool" id="crop-tool">
+  <div class="section-header reveal">
+    <p class="section-label">Smart Recommendation</p>
+    <h2 class="section-title">Which Manure Suits Your Crop?</h2>
+    <p class="section-sub">Select your crop below and we'll recommend the best product for maximum yield.</p>
+  </div>
+  <div class="crop-grid reveal">
+    <div>
+      <p class="section-label">Crop Selector</p>
+      <h3 class="section-title" style="font-size:1.7rem;">Tell Us What You Grow</h3>
+      <p style="color:var(--muted);font-size:0.9rem;line-height:1.8;margin-top:0.6rem;">Different crops need different nutrients. Our tool matches your crop to the ideal organic manure — saving you time and money.</p>
+    </div>
+    <div class="crop-selector">
+      <h3>Select Your Crop</h3>
+      <div class="crop-btns">
+        <button class="crop-btn" onclick="recommendManure('wheat',this)">🌾 Wheat</button>
+        <button class="crop-btn" onclick="recommendManure('rice',this)">🍚 Rice</button>
+        <button class="crop-btn" onclick="recommendManure('vegetables',this)">🥦 Vegetables</button>
+        <button class="crop-btn" onclick="recommendManure('fruit',this)">🍎 Fruits</button>
+        <button class="crop-btn" onclick="recommendManure('cotton',this)">🌸 Cotton</button>
+        <button class="crop-btn" onclick="recommendManure('sugarcane',this)">🎋 Sugarcane</button>
+        <button class="crop-btn" onclick="recommendManure('flowers',this)">🌺 Flowers</button>
+        <button class="crop-btn" onclick="recommendManure('spices',this)">🌶️ Spices</button>
+      </div>
+      <div class="crop-result" id="cropResult"><h4 id="cropRecTitle">Recommended Product</h4><p id="cropRecText">Select a crop to see our recommendation.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- USAGE GUIDE -->
+<section class="usage" id="usage">
+  <div class="section-header reveal">
+    <p class="section-label">How to Use</p>
+    <h2 class="section-title">Simple 5-Step Application Guide</h2>
+    <p class="section-sub">Follow these steps to get maximum results from B.S. Organic Manure on your farm.</p>
+  </div>
+  <div class="usage-grid">
+    <div class="usage-card reveal"><div class="usage-step">1</div><h3>Test Your Soil</h3><p>Before applying, do a basic soil test to understand current nutrient levels and pH balance.</p></div>
+    <div class="usage-card reveal"><div class="usage-step">2</div><h3>Calculate Quantity</h3><p>Use our Fertilizer Calculator to determine the exact number of bags needed per acre.</p></div>
+    <div class="usage-card reveal"><div class="usage-step">3</div><h3>Prepare the Field</h3><p>Plough or till the field. For best results, apply manure 2–3 weeks before sowing seeds.</p></div>
+    <div class="usage-card reveal"><div class="usage-step">4</div><h3>Spread Evenly</h3><p>Spread manure uniformly at the calculated rate. Mix lightly into the top 6 inches of soil.</p></div>
+    <div class="usage-card reveal"><div class="usage-step">5</div><h3>Irrigate & Monitor</h3><p>Water the field after application. Monitor growth and reapply at mid-season for best results.</p></div>
+  </div>
+  <div style="text-align:center;margin-top:2.2rem;" class="reveal">
+    <a href="#" class="btn-outline" onclick="window.open('https://drive.google.com/file/d/1Ja7S0s46YVH1-qyHYJ-HhJ6GebqpL58e/view?usp=drivesdk','_blank');return false;">📄 Download Full Brochure (PDF)</a>
+  </div>
+</section>
+
+<!-- CERTIFICATIONS -->
+<div class="certs">
+  <p class="section-label" style="text-align:center;">Trusted & Verified</p>
+  <h2 style="font-family:'Playfair Display',serif;font-size:1.7rem;color:var(--cream);text-align:center;margin-bottom:0.3rem;">Our Certifications</h2>
+  <div class="cert-grid">
+    <div class="cert-card"><div class="cert-icon">🏛️</div><div class="cert-name">APEDA Certified</div><div class="cert-sub">Organic Export Approval</div></div>
+    <div class="cert-card"><div class="cert-icon">🌿</div><div class="cert-name">India Organic</div><div class="cert-sub">NPOP Compliant</div></div>
+    <div class="cert-card"><div class="cert-icon">🔬</div><div class="cert-name">NABL Lab Tested</div><div class="cert-sub">Nutrient Certified</div></div>
+    <div class="cert-card"><div class="cert-icon">🌍</div><div class="cert-name">Eco Mark</div><div class="cert-sub">Eco-Friendly Product</div></div>
+    <div class="cert-card"><div class="cert-icon">🏆</div><div class="cert-name">State Agri Award</div><div class="cert-sub">Best Organic Brand 2023</div></div>
+  </div>
+</div>
+
+<!-- BEFORE / AFTER -->
+<section class="results">
+  <div class="section-header reveal">
+    <p class="section-label">Proven Results</p>
+    <h2 class="section-title">See the Difference It Makes</h2>
+    <p class="section-sub">Real results from real farmers who switched to B.S. Organic Manure.</p>
+  </div>
+  <div class="ba-grid">
+    <div class="ba-card reveal"><div class="ba-visual"><div class="ba-before"><div class="ba-label">Before</div><div class="ba-icon">🟤</div></div><div class="ba-after"><div class="ba-label">After</div><div class="ba-icon">🌿</div></div></div><div class="ba-info"><h3>Wheat Field — Haryana</h3><p>Dry, cracked soil with poor yield. After 2 seasons of B.S. Organic Manure, soil became rich and loamy.</p><div class="ba-stat">↑ 38% yield increase in Season 2</div></div></div>
+    <div class="ba-card reveal"><div class="ba-visual"><div class="ba-before"><div class="ba-label">Before</div><div class="ba-icon">🌵</div></div><div class="ba-after"><div class="ba-label">After</div><div class="ba-icon">🍅</div></div></div><div class="ba-info"><h3>Vegetable Farm — Punjab</h3><p>Low water retention and nutrient deficiency. Now producing premium quality tomatoes and onions.</p><div class="ba-stat">↑ 45% improvement in produce quality</div></div></div>
+    <div class="ba-card reveal"><div class="ba-visual"><div class="ba-before"><div class="ba-label">Before</div><div class="ba-icon">😔</div></div><div class="ba-after"><div class="ba-label">After</div><div class="ba-icon">😊</div></div></div><div class="ba-info"><h3>Home Garden — Bangalore</h3><p>Struggling potted plants and flower beds. Now thriving with our Flower & Garden Mix formula.</p><div class="ba-stat">↑ 60% healthier plants reported</div></div></div>
+  </div>
+</section>
+
+<!-- BULK ORDER -->
+<section class="bulk" id="bulk">
+  <div class="bulk-inner">
+    <div class="bulk-text reveal">
+      <p class="section-label">Wholesale & Bulk</p>
+      <h2 class="section-title">Order in Bulk,<br>Save More</h2>
+      <p>Whether you're a large farm, cooperative society, or agro company — we offer special bulk pricing, priority dispatch, and dedicated account management.</p>
+      <div class="bulk-perks">
+        <div class="bulk-perk"><span>💰</span><span>Up to 30% discount on orders above 1 tonne</span></div>
+        <div class="bulk-perk"><span>🚛</span><span>Direct truck delivery to your farm or warehouse</span></div>
+        <div class="bulk-perk"><span>📋</span><span>Custom packaging with your farm/brand name</span></div>
+        <div class="bulk-perk"><span>🤝</span><span>Dedicated account manager assigned</span></div>
+        <div class="bulk-perk"><span>📄</span><span>GST invoices & credit terms available</span></div>
+      </div>
+      <a href="https://wa.me/919671009006?text=I+want+to+enquire+about+bulk+manure+order" class="btn-primary" target="_blank">WhatsApp for Bulk Quote</a>
+    </div>
+    <div class="bulk-form reveal">
+      <h3>Request Bulk Quote</h3>
+      <div class="fg"><label>Full Name</label><input type="text" placeholder="Your name"/></div>
+      <div class="fg"><label>Phone / WhatsApp</label><input type="tel" placeholder="+91 00000 00000"/></div>
+      <div class="fg"><label>Product Needed</label><select><option>Premium Farm Compost</option><option>Vermicompost Gold</option><option>Cow Dung Manure</option><option>Liquid Bio Fertilizer</option><option>Mix / Multiple</option></select></div>
+      <div class="fg"><label>Quantity (kg)</label><input type="number" placeholder="e.g. 1000"/></div>
+      <div class="fg"><label>State / Location</label><input type="text" placeholder="Your state or district"/></div>
+      <button class="sbtn" onclick="formSubmit(this)">Request Quote →</button>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials" id="testimonials">
+  <div class="section-header reveal">
+    <p class="section-label">Farmer Stories</p>
+    <h2 class="section-title">What Our Farmers Say</h2>
+    <p class="section-sub">Over 10,000 farmers across India trust B.S. Organic Manure for better crops and healthier soil.</p>
+  </div>
+  <div class="testi-grid">
+    <div class="testi-card reveal"><div class="stars">★★★★★</div><div class="testi-quote">"</div><p class="testi-text">Maine pehli baar B.S. Organic ka vermicompost use kiya aur wheat ka yield 40% badh gaya. Ab sirf yahi use karta hoon!</p><div class="testi-author"><div class="testi-avatar">👨</div><div><div class="testi-name">Ranjit Singh</div><div class="testi-role">Wheat Farmer, Punjab</div><div class="verified">✅ Verified Buyer</div></div></div></div>
+    <div class="testi-card reveal"><div class="stars">★★★★★</div><div class="testi-quote">"</div><p class="testi-text">My vegetable farm's tomato yield doubled in one season. The soil has become so rich and dark. Excellent quality product!</p><div class="testi-author"><div class="testi-avatar">👩</div><div><div class="testi-name">Kavitha Reddy</div><div class="testi-role">Vegetable Farmer, Telangana</div><div class="verified">✅ Verified Buyer</div></div></div></div>
+    <div class="testi-card reveal"><div class="stars">★★★★★</div><div class="testi-quote">"</div><p class="testi-text">We order 5 tonnes every season for our cooperative farm. Bulk pricing is fair, delivery is on time, and the team is very responsive!</p><div class="testi-author"><div class="testi-avatar">👨</div><div><div class="testi-name">Pramod Patel</div><div class="testi-role">Coop Farm Manager, Gujarat</div><div class="verified">✅ Verified Buyer</div></div></div></div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq" id="faq">
+  <div class="section-header reveal">
+    <p class="section-label">Got Questions?</p>
+    <h2 class="section-title">Frequently Asked Questions</h2>
+  </div>
+  <div class="faq-grid reveal">
+    <div class="faq-list">
+      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Is your manure 100% chemical-free?<span class="faq-arrow">▼</span></div><div class="faq-a"><p>Yes. All our products are made purely from organic matter — crop residue, cattle waste, and worm-processed material. No synthetic additives or chemicals used at any stage.</p></div></div>
+      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">How much manure do I need per acre?<span class="faq-arrow">▼</span></div><div class="faq-a"><p>It depends on your crop and soil condition. Generally, 200–500 kg per acre is recommended. Use our Fertilizer Calculator on this page for an accurate estimate.</p></div></div>
+      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Do you deliver across India?<span class="faq-arrow">▼</span></div><div class="faq-a"><p>Yes! We deliver to 18 states across India. For major cities, delivery takes 3–5 business days. Bulk orders above 500kg go via truck directly to your location.</p></div></div>
+      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">What is your return policy?<span class="faq-arrow">▼</span></div><div class="faq-a"><p>We offer a 7-day return policy for damaged or incorrect products. For quality complaints, we conduct a lab test and offer replacement or full refund.</p></div></div>
+      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Can I get a sample before bulk ordering?<span class="faq-arrow">▼</span></div><div class="faq-a"><p>Yes! We provide 1kg sample packs for ₹99 (adjustable against your first bulk order). Contact us via WhatsApp to request a sample.</p></div></div>
+      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Do you have dealer / distributor programs?<span class="faq-arrow">▼</span></div><div class="faq-a"><p>Absolutely! We're actively looking for dealers across India. Check our Dealer Registration section or contact us directly for margin structure and terms.</p></div></div>
+    </div>
+    <div class="faq-contact">
+      <h3>Still have questions?</h3>
+      <p>Our team is available Monday–Saturday, 9 AM to 6 PM. We respond within a few hours.</p>
+      <div class="c-methods">
+        <div class="c-method"><div class="c-icon">💬</div><span>WhatsApp: +91 96710 09006</span></div>
+        <div class="c-method"><div class="c-icon">📞</div><span>Call: +91 96710 09006</span></div>
+        <div class="c-method"><div class="c-icon">📧</div><span>b.sorganicmanure@gmail.com</span></div>
+        <div class="c-method"><div class="c-icon">⏰</div><span>Mon–Sat: 9 AM – 6 PM</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BLOG -->
+<section class="blog" id="blog">
+  <div class="section-header reveal">
+    <p class="section-label">Farming Tips</p>
+    <h2 class="section-title">From Our Blog</h2>
+    <p class="section-sub">Practical guides, farming tips, and organic agriculture insights — updated regularly.</p>
+  </div>
+  <div class="blog-grid">
+    <div class="blog-card reveal"><div class="blog-img">🌱</div><div class="blog-body"><div class="blog-tag">Soil Health</div><h3>Why Organic Manure is Better Than Chemical Fertilizers</h3><p>Chemical fertilizers give quick results but destroy long-term soil health. Learn why organic manure is a smarter investment for your farm.</p><div class="blog-meta"><span>📅 Dec 2024</span><span>5 min read</span></div></div></div>
+    <div class="blog-card reveal"><div class="blog-img">🌾</div><div class="blog-body"><div class="blog-tag">Crop Guide</div><h3>Best Time to Apply Manure for Wheat & Rabi Crops</h3><p>Timing your manure application correctly can increase wheat yield by up to 25%. Here's the optimal schedule for Rabi season.</p><div class="blog-meta"><span>📅 Nov 2024</span><span>4 min read</span></div></div></div>
+    <div class="blog-card reveal"><div class="blog-img">🪱</div><div class="blog-body"><div class="blog-tag">Vermicompost</div><h3>Vermicompost vs Regular Compost: Which is Better for You?</h3><p>Both are organic but they have very different nutrient profiles and use cases. We break down the differences to help you choose wisely.</p><div class="blog-meta"><span>📅 Oct 2024</span><span>6 min read</span></div></div></div>
+  </div>
+</section>
+
+<!-- DEALER -->
+<section class="dealer" id="dealer">
+  <div class="section-header">
+    <p class="section-label" style="color:var(--lime);">Grow With Us</p>
+    <h2 class="section-title" style="color:var(--cream);">Become a Dealer / Distributor</h2>
+    <p class="section-sub" style="color:#4a6040;">Partner with B.S. Organic Manure and build a profitable agri-business in your region.</p>
+  </div>
+  <div class="dealer-grid">
+    <div>
+      <h3 style="font-family:'Playfair Display',serif;font-size:1.2rem;color:var(--cream);margin-bottom:1.3rem;">Active Dealer Zones</h3>
+      <div class="dealer-areas">
+        <div class="area-card"><div class="area-status active">Active</div><h4>Punjab & Haryana</h4><p>3 dealers active. Limited slots for new sub-dealers.</p></div>
+        <div class="area-card"><div class="area-status active">Active</div><h4>Maharashtra</h4><p>Pune & Nashik covered. Mumbai open.</p></div>
+        <div class="area-card"><div class="area-status new">Expanding</div><h4>UP & Bihar</h4><p>High demand zone. First-mover advantage available.</p></div>
+        <div class="area-card"><div class="area-status new">Expanding</div><h4>Karnataka & TN</h4><p>Southern India expansion — ideal for agri dealers.</p></div>
+      </div>
+    </div>
+    <div class="dealer-form reveal">
+      <h3>Dealer Registration</h3>
+      <div class="fg"><label>Business Name</label><input type="text" placeholder="Your shop / firm name"/></div>
+      <div class="fg"><label>Owner Name</label><input type="text" placeholder="Your full name"/></div>
+      <div class="fg"><label>WhatsApp Number</label><input type="tel" placeholder="+91 00000 00000"/></div>
+      <div class="fg"><label>State & District</label><input type="text" placeholder="e.g. Punjab, Ludhiana"/></div>
+      <div class="fg"><label>Business Type</label><select><option>Agri Input Dealer</option><option>Wholesale Distributor</option><option>Farmer Producer Org (FPO)</option><option>New to Agri Business</option></select></div>
+      <button class="sbtn" onclick="formSubmit(this)">Apply for Dealership →</button>
+    </div>
+  </div>
+</section>
+
+<!-- NEWSLETTER -->
+<div class="newsletter">
+  <div class="news-inner">
+    <div class="news-text"><h2>Get Farming Tips & Exclusive Offers 🌾</h2><p>Join 5,000+ farmers who receive our weekly newsletter — free!</p></div>
+    <div class="news-form"><input type="email" placeholder="Enter your email address"/><button onclick="this.textContent='✅ Subscribed!'">Subscribe Free</button></div>
+  </div>
+</div>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="contact-grid">
+    <div class="reveal">
+      <p class="section-label">Get in Touch</p>
+      <h2 class="section-title">We're Here to Help</h2>
+      <p style="color:var(--muted);font-size:0.9rem;line-height:1.8;margin-top:0.4rem;">Whether it's a product query, bulk order, or farming advice — our team is always ready to help. We respond within 24 hours.</p>
+      <div class="contact-info">
+        <div class="contact-item"><div class="ci-icon">📍</div><span>B.S. Organic Manure, Jhajjar – 124103, Haryana, India</span></div>
+        <div class="contact-item"><div class="ci-icon">📞</div><span>+91 96710 09006</span></div>
+        <div class="contact-item"><div class="ci-icon">📧</div><span>b.sorganicmanure@gmail.com</span></div>
+        <div class="contact-item"><div class="ci-icon">💬</div><span>WhatsApp: +91 96710 09006 (Preferred)</span></div>
+        <div class="contact-item"><div class="ci-icon">⏰</div><span>Mon–Sat: 9:00 AM – 6:00 PM</span></div>
+      </div>
+      <div class="map-box" onclick="window.open('https://maps.app.goo.gl/Jc83Qh5Qt3Z1jq4J9','_blank')"><span>🗺️</span><span>Click to Open Google Maps Location</span></div>
+    </div>
+    <div class="contact-form reveal">
+      <h3>Send Us a Message</h3>
+      <div class="cfg"><label>Your Name</label><input type="text" placeholder="e.g. Rahul Kumar"/></div>
+      <div class="cfg"><label>Phone / WhatsApp</label><input type="tel" placeholder="+91 00000 00000"/></div>
+      <div class="cfg"><label>Email</label><input type="email" placeholder="you@example.com"/></div>
+      <div class="cfg"><label>Subject</label><select><option>Product Enquiry</option><option>Bulk Order</option><option>Dealer / Distributor</option><option>Delivery Issue</option><option>Farming Advice</option><option>Other</option></select></div>
+      <div class="cfg"><label>Message</label><textarea placeholder="Tell us how we can help you..."></textarea></div>
+      <button class="csbtn" onclick="contactSubmit(this)">Send Message 🌿</button>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div>
+      <div class="footer-logo">B.S.<span>Organic</span> Manure</div>
+      <p class="footer-about">Established in 2021 at Jhajjar, Haryana. Manufacturer of Organic Manure, Vermicompost, Bio Fertilizer & Live Earthworms. 100% natural, certified organic products for healthier soil and better crop yields.</p>
+      <div class="social-links">
+        <a class="social-link" href="#" title="Facebook">📘</a>
+        <a class="social-link" href="#" title="Instagram">📸</a>
+        <a class="social-link" href="#" title="YouTube">▶️</a>
+        <a class="social-link" href="https://wa.me/919671009006" target="_blank" title="WhatsApp">💬</a>
+      </div>
+    </div>
+    <div class="footer-col"><h4>Quick Links</h4><ul><li><a href="#home">Home</a></li><li><a href="#about">About Us</a></li><li><a href="#products">Products</a></li><li><a href="#calculator">Calculator</a></li><li><a href="#bulk">Bulk Order</a></li><li><a href="#dealer">Become Dealer</a></li></ul></div>
+    <div class="footer-col"><h4>Products</h4><ul><li><a href="#products">Farm Compost</a></li><li><a href="#products">Vermicompost</a></li><li><a href="#products">Cow Dung Manure</a></li><li><a href="#products">Liquid Fertilizer</a></li><li><a href="#products">Garden Mix</a></li><li><a href="#products">Paddy Special</a></li></ul></div>
+    <div class="footer-col"><h4>Help & Info</h4><ul><li><a href="#faq">FAQs</a></li><li><a href="#usage">Usage Guide</a></li><li><a href="#blog">Farming Blog</a></li><li><a href="#contact">Shipping Policy</a></li><li><a href="#contact">Return Policy</a></li><li><a href="#contact">Privacy Policy</a></li></ul></div>
+  </div>
+  <div class="footer-bottom"><span>© 2025 B.S. Organic Manure. All rights reserved.</span><span>Made with 💚 for Indian Farmers</span></div>
+</footer>
+
+<script>
+// LOADER
+window.addEventListener('load',()=>{setTimeout(()=>{document.getElementById('loader').classList.add('hide');},1600);});
+
+// SCROLL REVEAL
+const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target);}});},{threshold:0.1});
+document.querySelectorAll('.reveal').forEach(r=>obs.observe(r));
+
+// SCROLL EVENTS
+window.addEventListener('scroll',()=>{
+  document.getElementById('navbar').style.boxShadow=window.scrollY>40?'0 4px 30px rgba(0,0,0,0.07)':'none';
+  document.getElementById('backTop').classList.toggle('show',window.scrollY>400);
+});
+
+// HAMBURGER
+function toggleMenu(){document.getElementById('mobileMenu').classList.toggle('open');}
+
+// CART
+let cart = JSON.parse(localStorage.getItem('bs-cart') || '[]');
+function openCart(){document.getElementById('cartOverlay').classList.add('open');}
+function closeCart(){document.getElementById('cartOverlay').classList.remove('open');}
+function saveCart(){localStorage.setItem('bs-cart', JSON.stringify(cart));}
+function addToCart(name,price,icon){
+  const ex=cart.find(i=>i.name===name);
+  if(ex){ex.qty++;}else{cart.push({name,price,icon,qty:1});}
+  updateCart();
+  const btn=event.target;
+  const orig=btn.textContent;
+  btn.textContent='✅ Added!';btn.style.background='#6db33f';
+  setTimeout(()=>{btn.textContent=orig;btn.style.background='';},1500);
+  openCart();
+}
+function removeFromCart(name){cart=cart.filter(i=>i.name!==name);updateCart();}
+function updateCart(){
+  saveCart();
+  const total=cart.reduce((s,i)=>s+i.price*i.qty,0);
+  const count=cart.reduce((s,i)=>s+i.qty,0);
+  document.getElementById('cartCount').textContent=count;
+  document.getElementById('mobileCartCount').textContent=count;
+  const el=document.getElementById('cartItems');
+  const tot=document.getElementById('cartTotal');
+  if(cart.length===0){el.innerHTML='<div class="cart-empty"><span>🌱</span>Your cart is empty.<br>Add some organic products!</div>';tot.style.display='none';}
+  else{
+    el.innerHTML=cart.map(i=>`<div class="cart-item"><div class="cart-item-icon">${i.icon}</div><div class="cart-item-info"><div class="cart-item-name">${i.name} ×${i.qty}</div><div class="cart-item-price">₹${(i.price*i.qty).toLocaleString()}</div></div><button class="cart-item-remove" onclick="removeFromCart('${i.name}')">🗑</button></div>`).join('');
+    document.getElementById('subtotal').textContent='₹'+total.toLocaleString();
+    document.getElementById('grandTotal').textContent='₹'+total.toLocaleString();
+    tot.style.display='block';
+  }
+}
+// Restore cart UI on page load
+updateCart();
+
+function checkout(){
+  if(cart.length===0){alert('Your cart is empty — add a product first!');return;}
+  const total=cart.reduce((s,i)=>s+i.price*i.qty,0);
+  document.getElementById('co-total').textContent='₹'+total.toLocaleString();
+  closeCart();
+  document.getElementById('checkoutOverlay').classList.add('open');
+}
+function closeCheckout(){document.getElementById('checkoutOverlay').classList.remove('open');}
+
+// LOGIN
+function openLogin(){document.getElementById('loginModal').classList.add('open');}
+function closeLogin(){document.getElementById('loginModal').classList.remove('open');}
+function switchTab(tab){
+  document.querySelectorAll('.modal-tab').forEach((t,i)=>t.classList.toggle('active',(i===0&&tab==='login')||(i===1&&tab==='signup')));
+  document.getElementById('loginForm').style.display=tab==='login'?'block':'none';
+  document.getElementById('signupForm').style.display=tab==='signup'?'block':'none';
+}
+// fakeLogin() removed — replaced by real Firebase handleLogin()/handleSignup() below
+
+// PRODUCT FILTER
+function filterProducts(cat,btn){
+  document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('.product-card').forEach(card=>{card.style.display=(cat==='all'||card.dataset.cat===cat)?'block':'none';});
+}
+
+// CALCULATOR
+function calculateManure(){
+  const crop=document.getElementById('cropType').value;
+  const area=parseFloat(document.getElementById('landArea').value);
+  const unit=document.getElementById('areaUnit').value;
+  if(!area||area<=0){alert('Please enter a valid land area.');return;}
+  const kgPerAcre={wheat:300,rice:400,vegetables:500,sugarcane:600,cotton:350,maize:300,fruit:250};
+  const toAcre={acre:1,hectare:2.47,bigha:0.62};
+  const acres=area*toAcre[unit];
+  const kg=Math.ceil(acres*kgPerAcre[crop]);
+  const bags=Math.ceil(kg/50);
+  document.getElementById('resNum').textContent=bags+' bags (50kg each)';
+  document.getElementById('resDesc').textContent='≈ '+kg+' kg total for '+area+' '+unit+'(s) of '+crop;
+  document.getElementById('calcResult').classList.add('show');
+}
+
+// CROP RECOMMENDATION
+const recs={
+  wheat:{title:'Premium Farm Compost or Cow Dung Manure',text:'Wheat thrives with nitrogen-rich compost. Apply 300kg/acre, 2–3 weeks before sowing. Our Premium Farm Compost or Cow Dung Manure is ideal.'},
+  rice:{title:'Paddy Crop Special',text:'Rice/Paddy needs high potassium and organic matter. Our Paddy Crop Special is formulated for waterlogged paddy fields — gives 35% yield boost.'},
+  vegetables:{title:'Vermicompost Gold',text:'Vegetables need high nutrient density. Vermicompost Gold provides the best NPK balance for tomatoes, onions, potatoes, and all vegetables.'},
+  fruit:{title:'Vermicompost Gold + Liquid Bio Fertilizer',text:'Fruit trees benefit from deep-feeding. Combine Vermicompost Gold for base nutrition with Liquid Bio Fertilizer for foliar application.'},
+  cotton:{title:'Premium Farm Compost',text:'Cotton is a heavy feeder. Use Premium Farm Compost at 400kg/acre before planting for best boll formation and fiber quality.'},
+  sugarcane:{title:'Premium Farm Compost (Heavy Application)',text:'Sugarcane needs maximum organic matter. Apply 600–800kg/acre of Farm Compost for high sugar content and cane weight.'},
+  flowers:{title:'Flower & Garden Mix',text:'Our specially blended Flower & Garden Mix is perfect for all flowering crops and ornamental plants — odor-controlled and nutrient-balanced.'},
+  spices:{title:'Vermicompost Gold + Liquid Bio Fertilizer',text:'Spices like turmeric, ginger, and chilli need rich, well-drained soil. Vermicompost Gold + Liquid spray gives best results.'},
+};
+function recommendManure(crop,btn){
+  document.querySelectorAll('.crop-btn').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  const r=recs[crop];
+  document.getElementById('cropRecTitle').textContent='✅ '+r.title;
+  document.getElementById('cropRecText').textContent=r.text;
+  document.getElementById('cropResult').classList.add('show');
+}
+
+// FAQ
+function toggleFaq(el){
+  const item=el.parentElement;
+  const isOpen=item.classList.contains('open');
+  document.querySelectorAll('.faq-item').forEach(i=>i.classList.remove('open'));
+  if(!isOpen)item.classList.add('open');
+}
+
+// FORM SUBMIT
+function formSubmit(btn){
+  const o=btn.textContent;
+  btn.textContent='✅ Submitted! We will contact you soon.';
+  btn.style.background='#5aa030';btn.disabled=true;
+  setTimeout(()=>{btn.textContent=o;btn.style.background='';btn.disabled=false;},3500);
+}
+function contactSubmit(btn){
+  const o=btn.textContent;
+  btn.textContent='✅ Message Sent! We will reply within 24 hours.';
+  btn.style.background='#5aa030';btn.disabled=true;
+  setTimeout(()=>{btn.textContent=o;btn.style.background='';btn.disabled=false;},3500);
+}
+</script>
+
+
+
+
+<style>
+  /* PWA Banner */
+  #pwa-banner{position:fixed;bottom:0;left:0;right:0;background:#0f1a08;color:white;padding:1rem 1.4rem;display:none;align-items:center;justify-content:space-between;z-index:5000;border-top:3px solid #6db33f;flex-wrap:wrap;gap:0.8rem;box-shadow:0 -4px 24px rgba(0,0,0,0.5);}
+  #pwa-banner.show{display:flex;}
+  .pwa-left{display:flex;align-items:center;gap:0.9rem;}
+  .pwa-logo{width:46px;height:46px;border-radius:12px;background:#2a5c0e;display:flex;align-items:center;justify-content:center;font-size:1.5rem;flex-shrink:0;}
+  .pwa-text h4{font-size:0.92rem;font-weight:700;color:white;margin-bottom:0.15rem;}
+  .pwa-text p{font-size:0.72rem;color:#a0bf80;margin:0;}
+  .pwa-btns{display:flex;gap:0.6rem;flex-shrink:0;}
+  .pwa-install{background:#6db33f;color:white;border:none;padding:0.6rem 1.3rem;border-radius:2rem;font-family:"Jost",sans-serif;font-weight:700;font-size:0.83rem;cursor:pointer;}
+  .pwa-dismiss{background:transparent;color:#6a8060;border:1px solid #3a5030;padding:0.6rem 1rem;border-radius:2rem;font-family:"Jost",sans-serif;font-size:0.82rem;cursor:pointer;}
+  /* Manual install modal */
+  #install-modal{position:fixed;inset:0;background:rgba(0,0,0,0.7);z-index:6000;display:none;align-items:flex-end;justify-content:center;}
+  #install-modal.show{display:flex;}
+  .install-box{background:white;border-radius:1.5rem 1.5rem 0 0;padding:2rem;width:100%;max-width:500px;}
+  .install-box h3{font-family:"Playfair Display",serif;font-size:1.3rem;color:#2a5c0e;margin-bottom:0.5rem;}
+  .install-box p{font-size:0.85rem;color:#756a55;margin-bottom:1.2rem;line-height:1.7;}
+  .install-steps{display:flex;flex-direction:column;gap:0.8rem;margin-bottom:1.5rem;}
+  .install-step{display:flex;align-items:center;gap:0.8rem;font-size:0.85rem;color:#1a1710;}
+  .step-num{width:28px;height:28px;border-radius:50%;background:#2a5c0e;color:white;display:flex;align-items:center;justify-content:center;font-size:0.75rem;font-weight:700;flex-shrink:0;}
+  .install-close{width:100%;background:#2a5c0e;color:white;border:none;padding:0.9rem;border-radius:3rem;font-family:"Jost",sans-serif;font-weight:600;font-size:0.9rem;cursor:pointer;}
+  /* Offline */
+  #offline-bar{position:fixed;top:65px;left:0;right:0;background:#c8860a;color:white;text-align:center;padding:0.5rem;font-size:0.82rem;font-weight:600;z-index:4000;display:none;}
+  #offline-bar.show{display:block;}
+</style>
+
+<!-- PWA Install Banner (auto prompt for Android Chrome) -->
+<div id="pwa-banner">
+  <div class="pwa-left">
+    <div class="pwa-logo">🌿</div>
+    <div class="pwa-text">
+      <h4>Install B.S. Organic App</h4>
+      <p>Add to home screen — free, works offline!</p>
+    </div>
+  </div>
+  <div class="pwa-btns">
+    <button class="pwa-install" id="pwa-install-btn">📲 Install</button>
+    <button class="pwa-dismiss" id="pwa-dismiss-btn">✕</button>
+  </div>
+</div>
+
+<!-- Manual Install Modal (for iPhone & others) -->
+<div id="install-modal">
+  <div class="install-box">
+    <h3>📲 Install B.S. Organic App</h3>
+    <p>Follow these steps to add this website to your home screen as an app:</p>
+    <div class="install-steps" id="install-steps-content"></div>
+    <button class="install-close" onclick="document.getElementById('install-modal').classList.remove('show')">Got it! ✅</button>
+  </div>
+</div>
+
+<!-- Offline Bar -->
+<div id="offline-bar">⚠️ You are offline — showing saved content</div>
+
+<script>
+// ── DETECT DEVICE ──
+const isAndroid = /android/i.test(navigator.userAgent);
+const isIOS     = /iphone|ipad|ipod/i.test(navigator.userAgent);
+const isChrome  = /chrome/i.test(navigator.userAgent) && !/edge/i.test(navigator.userAgent);
+
+// ── MANIFEST via Blob ──
+const manifestObj = {
+  name: "B.S. Organic Manure",
+  short_name: "BS Organic",
+  description: "100% Natural Organic Manure & Vermicompost from Jhajjar, Haryana",
+  start_url: "https://bsorganicmanuer.netlify.app/",
+  scope: "https://bsorganicmanuer.netlify.app/",
+  display: "standalone",
+  background_color: "#0f1a08",
+  theme_color: "#2a5c0e",
+  orientation: "portrait-primary",
+  icons: [
+    { src: "https://5.imimg.com/data5/SELLER/Logo/2021/6/XV/BX/AB/125393589/197562764-227254372273292-5399717311579557741-n-120x120.jpg", sizes: "192x192", type: "image/jpeg", purpose: "any maskable" },
+    { src: "https://5.imimg.com/data5/SELLER/Logo/2021/6/XV/BX/AB/125393589/197562764-227254372273292-5399717311579557741-n-120x120.jpg", sizes: "512x512", type: "image/jpeg", purpose: "any maskable" }
+  ]
+};
+try {
+  const blob = new Blob([JSON.stringify(manifestObj)], {type:"application/manifest+json"});
+  const url  = URL.createObjectURL(blob);
+  const link = document.createElement("link");
+  link.rel   = "manifest";
+  link.href  = url;
+  document.head.appendChild(link);
+} catch(e) { console.log("Manifest blob error:", e); }
+
+// ── ANDROID CHROME: Auto install prompt ──
+let deferredPrompt = null;
+const banner  = document.getElementById("pwa-banner");
+const instBtn = document.getElementById("pwa-install-btn");
+const disBtn  = document.getElementById("pwa-dismiss-btn");
+
+window.addEventListener("beforeinstallprompt", e => {
+  e.preventDefault();
+  deferredPrompt = e;
+  if (!localStorage.getItem("pwa-dismissed")) {
+    setTimeout(() => banner.classList.add("show"), 3000);
+  }
+});
+
+instBtn.addEventListener("click", async () => {
+  banner.classList.remove("show");
+  if (deferredPrompt) {
+    deferredPrompt.prompt();
+    const { outcome } = await deferredPrompt.userChoice;
+    deferredPrompt = null;
+    if (outcome === "accepted") {
+      alert("✅ App installed! Check your home screen.");
+    }
+  } else {
+    // Fallback: show manual steps
+    showManualInstall();
+  }
+});
+
+disBtn.addEventListener("click", () => {
+  banner.classList.remove("show");
+  localStorage.setItem("pwa-dismissed", "1");
+});
+
+window.addEventListener("appinstalled", () => {
+  banner.classList.remove("show");
+});
+
+// ── MANUAL INSTALL (iOS Safari & others) ──
+function showManualInstall() {
+  const stepsEl = document.getElementById("install-steps-content");
+  let steps = [];
+  if (isIOS) {
+    steps = [
+    "Open this website in Chrome browser",
+    "Tap the 3-dot menu (⋮) at top right",
+    "Tap \"Add to Home screen\"",
+    "Tap \"Add\" — Done! App icon added ✅"
+    ];
+  } else if (isAndroid) {
+    steps = [
+      "Open this website in Chrome browser",
+      "Tap the 3-dot menu (⋮) at top right",
+      "Tap \"Add to Home screen\"",
+      "Tap \"Add\" — Done! App icon added ✅"
+    ];
+  } else {
+    steps = [
+      "Open this website in Chrome or Edge",
+      "Click the install icon (⊕) in the address bar",
+      "Click \"Install\" in the popup",
+      "App will open like a desktop application ✅"
+    ];
+  }
+  stepsEl.innerHTML = steps.map((s, i) =>
+    `<div class="install-step"><div class="step-num">${i+1}</div><span>${s}</span></div>`
+  ).join("");
+  document.getElementById("install-modal").classList.add("show");
+}
+
+// ── iOS: Show banner with manual steps ──
+if (isIOS && !window.navigator.standalone && !localStorage.getItem("pwa-dismissed")) {
+  setTimeout(() => {
+    banner.classList.add("show");
+    instBtn.textContent = "📲 How to Install";
+    instBtn.onclick = () => { banner.classList.remove("show"); showManualInstall(); };
+  }, 3000);
+}
+
+// ── OFFLINE ──
+const offBar = document.getElementById("offline-bar");
+window.addEventListener("online",  () => offBar.classList.remove("show"));
+window.addEventListener("offline", () => offBar.classList.add("show"));
+if (!navigator.onLine) offBar.classList.add("show");
+</script>
+
+<!-- ============================================ -->
+<!-- EMAILJS — order notification emails           -->
+<!-- ============================================ -->
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script>
+  // PASTE your EmailJS Public Key here (from EmailJS dashboard → Account → General)
+  if (window.emailjs) emailjs.init("YOUR_PUBLIC_KEY");
+</script>
+
+<!-- ============================================ -->
+<!-- FIREBASE AUTH — real login/signup            -->
+<!-- ============================================ -->
+
+<script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+  import {
+    getAuth,
+    createUserWithEmailAndPassword,
+    signInWithEmailAndPassword,
+    onAuthStateChanged,
+    updateProfile
+  } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+  import {
+    getFirestore,
+    collection,
+    addDoc,
+    serverTimestamp
+  } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+
+  const firebaseConfig = {
+    apiKey: "AIzaSyC7RAhsUYWveFVkTw6XFsSEBlCR0iYXDcc",
+    authDomain: "bsorganicmanure-007.firebaseapp.com",
+    projectId: "bsorganicmanure-007",
+    storageBucket: "bsorganicmanure-007.firebasestorage.app",
+    messagingSenderId: "190618381072",
+    appId: "1:190618381072:web:106609e0f2ea0cee7bd395"
+  };
+
+  const app = initializeApp(firebaseConfig);
+  const auth = getAuth(app);
+  const db = getFirestore(app);
+
+  function humanizeError(code) {
+    const messages = {
+      "auth/email-already-in-use": "That email is already registered. Try logging in instead.",
+      "auth/invalid-email": "Please enter a valid email address.",
+      "auth/weak-password": "Password should be at least 6 characters.",
+      "auth/user-not-found": "No account found with that email.",
+      "auth/wrong-password": "Incorrect password.",
+      "auth/invalid-credential": "Incorrect email or password."
+    };
+    return messages[code] || code;
+  }
+
+  window.handleLogin = async function () {
+    const email = document.getElementById("login-email").value.trim();
+    const password = document.getElementById("login-password").value;
+
+    if (!email || !password) { alert("Please fill in both fields."); return; }
+
+    const btn = document.getElementById("login-btn");
+    btn.disabled = true; btn.textContent = "Logging in...";
+
+    try {
+      await signInWithEmailAndPassword(auth, email, password);
+      closeLogin();
+      alert("✅ Logged in successfully!");
+    } catch (error) {
+      alert("❌ " + humanizeError(error.code));
+    } finally {
+      btn.disabled = false; btn.textContent = "Login →";
+    }
+  };
+
+  window.handleSignup = async function () {
+    const name = document.getElementById("signup-name").value.trim();
+    const email = document.getElementById("signup-email").value.trim();
+    const password = document.getElementById("signup-password").value;
+
+    if (!name || !email || !password) { alert("Please fill in all required fields."); return; }
+    if (password.length < 6) { alert("Password should be at least 6 characters."); return; }
+
+    const btn = document.getElementById("signup-btn");
+    btn.disabled = true; btn.textContent = "Creating account...";
+
+    try {
+      const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+      await updateProfile(userCredential.user, { displayName: name });
+      closeLogin();
+      alert("✅ Account created! You are now logged in, " + name + ".");
+    } catch (error) {
+      alert("❌ " + humanizeError(error.code));
+    } finally {
+      btn.disabled = false; btn.textContent = "Create Account →";
+    }
+  };
+
+  onAuthStateChanged(auth, (user) => {
+    if (user) {
+      console.log("Logged in as:", user.displayName || user.email);
+    }
+  });
+
+  // ============================================
+  // CHECKOUT — save order, notify via WhatsApp + Email
+  // ============================================
+  window.submitOrder = async function () {
+    const name = document.getElementById("co-name").value.trim();
+    const phone = document.getElementById("co-phone").value.trim();
+    const address = document.getElementById("co-address").value.trim();
+
+    if (!name || !phone || !address) {
+      alert("Please fill in your name, phone, and address.");
+      return;
+    }
+    if (!Array.isArray(cart) || cart.length === 0) {
+      alert("Your cart is empty.");
+      return;
+    }
+
+    const items = cart;
+    const total = items.reduce((s, i) => s + i.price * i.qty, 0);
+    const itemsText = items.map(i => `${i.name} ×${i.qty} — ₹${i.price * i.qty}`).join("\n");
+
+    const btn = document.getElementById("co-submit-btn");
+    btn.disabled = true; btn.textContent = "Placing order...";
+
+    try {
+      // 1. Save order to Firestore
+      await addDoc(collection(db, "orders"), {
+        name, phone, address,
+        items,
+        total,
+        userEmail: auth.currentUser ? auth.currentUser.email : null,
+        createdAt: serverTimestamp()
+      });
+
+      // 2. Open WhatsApp with pre-filled order summary
+      const waText = encodeURIComponent(
+        `🌿 New Order — B.S. Organic Manure\n\nName: ${name}\nPhone: ${phone}\nAddress: ${address}\n\nItems:\n${itemsText}\n\nTotal: ₹${total}`
+      );
+      window.open(`https://wa.me/919671009006?text=${waText}`, "_blank");
+
+      // 3. Send email notification via EmailJS
+      if (window.emailjs) {
+        try {
+          await window.emailjs.send("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", {
+            customer_name: name,
+            customer_phone: phone,
+            customer_address: address,
+            order_items: itemsText,
+            order_total: total
+          });
+        } catch (emailErr) {
+          console.log("Email notification failed (order still saved):", emailErr);
+        }
+      }
+
+      alert("🌿 Order placed! We'll call you within 2 hours to confirm.\n\nA WhatsApp message has been prepared — just tap Send.");
+      cart.length = 0;
+      if (typeof updateCart === "function") updateCart();
+      document.getElementById("co-name").value = "";
+      document.getElementById("co-phone").value = "";
+      document.getElementById("co-address").value = "";
+      closeCheckout();
+    } catch (error) {
+      console.error(error);
+      alert("❌ Something went wrong placing your order. Please try again or WhatsApp us directly at +91 96710 09006.");
+    } finally {
+      btn.disabled = false; btn.textContent = "Place Order →";
+    }
+  };
+</script>
+
+</body>
+</html>
